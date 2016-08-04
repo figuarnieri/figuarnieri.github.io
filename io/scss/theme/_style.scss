@@ -1,0 +1,37 @@
+$height: 50px;
+@include sticky-footer($height, "#all", "#all:after", "#down");
+#all:after{content: '';display: block;height: $height;}
+
+body{overflow: hidden;background-color: #000;color: #fff;font-family: Arial;}
+.wrap{max-width: 1000px;}
+._text{
+	/*background-color: ;color: ;padding: ;font-size: ;*/
+	&:focus{}
+}
+._submit{
+	/*background-color: ;color: ;padding: ;font-size: ;*/
+	&:hover{}
+}
+._back{
+	/*background-color: ;color: ;padding: ;font-size: ;*/
+	&:hover{}
+}
+
+.yiiPager{
+	display: inline-block;
+	@include device(tablet) {
+		margin-top: 20px;
+	}
+	li{float: left;margin: 0px;}
+	a{
+		display: block;text-align: center;font-size: 12px;
+		&:hover{box-shadow: 0 0 10px #ccc;color: darken(#8bd, 20%);}
+		@include device(tablet) {
+			font-size: 18px;
+		}
+	}
+	.hidden{display: none;}
+	.selected a{
+		cursor: default;
+	}
+}

@@ -1,0 +1,17 @@
+#home{
+	.video{width: 100%;height: auto;}
+	.height{height: 100vh;}
+	.col-week{width: 14.28571428571429%;border: 1px solid #000;float: left;background-color: rgba(255,255,255,.1);padding: 14px 5px;}
+	.calendar-week{
+		width: 100%;
+		.col-week{padding: 5px;background-color: rgba(190,0,0,.5);color: #fff;}
+	}
+	.col-disabled{background-color: #111;color: #333;}
+	.bigtitle{font-size: 90px;font-family: 'be_true';}
+	.social{margin: 15px;}
+	.social .fa{font-size: 20px;margin-left: 10px;}
+}
+#calendar{
+	position: relative;overflow: hidden;
+	&:before{content: 'EM BREVE';position: absolute;width: 100vw;top: 140px;text-align: center;background-color: rgba(#c00,.8);left: 50%;margin-left: -50vw;@include transform(rotate(25deg));font-size: 30px;padding: 15px;}
+}

@@ -1,18 +1,75 @@
-<?php
-//error_reporting(E_ERROR); ini_set("display_errors", 1);
-ob_start();
-header("Content-Type: text/html; charset=UTF-8",true) ;
-if ($_SERVER['HTTP_HOST'] == 'local.') {
-    define('__IP__', '54.152.249.112');
-}else{
-    define('__IP__', '127.0.0.1');
-}
-
-$yii= dirname(__FILE__).'/protected/framework/yii.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
-// remove the following lines when in production mode
-defined('YII_DEBUG') or define('YII_DEBUG',true);
-// specify how many levels of call stack should be shown in each log message
-defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',5);
-require_once($yii);
-Yii::createWebApplication($config)->run();
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Filipe Guarnieri - Web Developer</title>
+	<link rel="stylesheet" href="io/css/all.css">
+	<link rel="apple-touch-icon" sizes="57x57" href="io/img/mobile/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="io/img/mobile/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="io/img/mobile/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="io/img/mobile/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="io/img/mobile/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="io/img/mobile/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="io/img/mobile/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="io/img/mobile/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="io/img/mobile/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="io/img/mobile/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="io/img/mobile/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="io/img/mobile/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="io/img/mobile/favicon-16x16.png">
+	<link rel="manifest" href="io/img/mobile/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="io/img/mobile/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<script src="io/js/all.js"></script>
+</head>
+<body id="home">
+	<div class="col-10 col-lr height">
+		<video class="video" src="io/img/video.mp4" autoplay loop></video>
+	</div>
+	<div class="col-10 height">
+		<h1 class="bigtitle ta-c">Filipe Guarnieri</h1>
+		<div id="calendar"></div>
+		<div class="social ta-r">
+			<a class="fa fa-facebook" target="_blank" href="//fb.com/figuarnieri"></a>
+			<a class="fa fa-twitter" target="_blank" href="//twitter.com/figuarnieri"></a>
+			<a class="fa fa-github" target="_blank" href="//github.com/figuarnieri"></a>
+		</div>
+	</div>
+	<script>
+		createCalendar();
+		/*$.ajax({
+			  type: 'GET'
+			, url: 'https://clients6.google.com/calendar/v3/calendars/fyguarnieri@gmail.com/events'
+			, beforeSend: function(){
+				createCalendar();
+			}
+			, data: {
+				  calendarId: 'fyguarnieri@gmail.com'
+				, singleEvents: true
+				, maxResults: 100
+				, sanitizeHtml: true
+				, orderBy: 'startTime'
+				, timeMin: init.toISOString()
+				, timeMax: over.toISOString()
+				, key: 'AIzaSyAiabPgLMdp2yFzC89ycVscAkjNb2saZDE'
+			}
+			, dataType: 'jsonp'
+			, success: function (e) {
+				var events = e.items;
+				for(i in events){
+					var event = events[i]
+					, weekDay =  event.start.date ? getWeek(new Date(event.start.date).toDateString()) : getWeek(new Date(event.start.dateTime).toDateString());
+					;
+					//console.log(weekDay=='Sun' ? 'Dom' : weekDay=='Mon' ? 'Seg' : weekDay=='Tue' ? 'Ter' : weekDay=='Wed' ? 'Qua' : weekDay=='Thu' ? 'Qui' : weekDay=='Fri' ? 'Sex' : 'Sab');
+				}
+				//do whatever you want with each
+			}
+			, error: function (e) {
+				console.log(e.responseText)
+				//tell that an error has occurred
+			}
+		});*/
+	</script>
+  </body>
+</html>
