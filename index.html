@@ -24,25 +24,144 @@
 	<script src="io/js/all.js"></script>
 </head>
 <body id="home">
-	<div class="col-10 col-lr height">
-		<video class="video" src="io/img/video.mp4" autoplay loop></video>
-	</div>
-	<div class="col-10 height">
-		<h1 class="bigtitle ta-c">Filipe Guarnieri</h1>
-		<div id="calendar"></div>
-		<div class="social ta-r">
-			<a class="fa fa-facebook" target="_blank" href="//fb.com/figuarnieri"></a>
-			<a class="fa fa-twitter" target="_blank" href="//twitter.com/figuarnieri"></a>
-			<a class="fa fa-github" target="_blank" href="//github.com/figuarnieri"></a>
+	<video class="video" src="io/img/video.mp4" autoplay loop></video>
+	<nav class="nav col-1 col-lr ta-c" role="navigation">
+		<a class="nav-item d-b fa fa-facebook" target="_blank" href="//fb.com/figuarnieri" data-tip="Facebook" data-tip-side="right"></a>
+		<a class="nav-item d-b fa fa-twitter" target="_blank" href="//twitter.com/figuarnieri" data-tip="Twitter" data-tip-side="right"></a>
+		<a class="nav-item d-b fa fa-github" target="_blank" href="//github.com/figuarnieri" data-tip="Github" data-tip-side="right"></a>
+		<!-- <a href="#" class="nav-item d-b fa fa-home" data-tip="Home" data-tip-side="right"></a>
+		<a href="#" class="nav-item d-b fa fa-user" data-tip="About Me" data-tip-side="right"></a>
+		<a href="#" class="nav-item d-b fa fa-cubes" data-tip="Projects" data-tip-side="right"></a> -->
+	</nav>
+	<main role="main" class="col-19 col-lr">
+		<div class="col-10 col-lr height">
+			<div class="list height"></div>
 		</div>
-	</div>
+		<div class="col-10 col-lr height">
+			<h1 class="bigtitle ta-c">Filipe Guarnieri</h1>
+			<div id="calendar"></div>
+			<div class="social ta-r">
+				<!-- <a class="fa fa-facebook" target="_blank" href="//fb.com/figuarnieri" data-tip="Facebook""></a>
+				<a class="fa fa-twitter" target="_blank" href="//twitter.com/figuarnieri" data-tip="Twitter""></a>
+				<a class="fa fa-github" target="_blank" href="//github.com/figuarnieri" data-tip="Github""></a> -->
+			</div>
+		</div>
+	</main>
 	<script>
-		createCalendar();
-		/*$.ajax({
+
+		var date = new Date()
+		, year = date.getFullYear()
+		, month = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+		, monthDay = date.getMonth()
+		, monthBeforeOver = new Date(year, monthDay, 0)
+		, monthAfterInit = new Date(year, monthDay+1, 1)
+		, init = new Date(year, monthDay, 1)
+		, over = new Date(year, monthDay+1, 0)
+		, weekDay = [
+			  ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
+			, ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+		]
+		, getWeek = function(e){
+			return new String(e).substring(0,3);
+		}
+		, createCalendar = function(){
+			$('#calendar').addClass('cf').html('<div class="calendar-week"></div><div class="calendar-days" />');
+
+			/*DIAS DA SEMANA*/
+			for(i=0;i<7;i++){
+				$('#calendar .calendar-week').append('<div class="col-week ta-c">'+getWeek(weekDay[0][i])+'</div>');
+			}
+			for(i=0;i<7;i++){
+				$('#calendar .calendar-days').append('<div class="col-week ta-c" data-week="'+getWeek(weekDay[1][i])+'" data-month="'+monthDay+'" />');
+				$('[data-week="'+getWeek(init)+'"]:first').addClass('enabled').html('<div class="calendar-day">'+(init.getDate())+'</div>').prevAll('[data-week]');
+			}
+			$('#calendar .calendar-days .enabled:first').prev().html('<div class="calendar-day">'+monthBeforeOver.getDate()+'</div>').addClass('col-disabled')
+
+			/*COMPLETE MES ATUAL*/
+			for(var i=2;i<=over.getDate();i++){
+				var lastEnabled = $('#calendar .calendar-days .enabled:last');
+				if(lastEnabled.next().length){
+					lastEnabled.next().addClass('enabled').html('<div class="calendar-day">'+i+'</div>');
+				} else {
+					lastEnabled.after('<div class="col-week enabled ta-c" data-week="'+getWeek(weekDay[1][i%7])+'" data-month="'+(monthDay+1)+'"><div class="calendar-day">'+i+'</div></div>');
+				}
+			}
+			/*COMPLETE MES ANTERIOR*/
+			for(var i=monthBeforeOver.getDate()-1;i>0;i--){
+				var j = i%7
+				, week = j==0 ? 'Sun' : j==1 ? 'Mon' : j==2 ? 'Tue' : j==3 ? 'Wed' : j==4 ? 'Thu' : j==5 ? 'Fri' : 'Sat'
+				, lastDisabled = $('#calendar .calendar-days .col-disabled:first')
+				;
+				if(lastDisabled.prev().length){
+					lastDisabled.prev().addClass('col-disabled').html('<div class="calendar-day">'+i+'</div>');
+				}
+			}
+			/*COMPLETE MES POSTERIOR*/
+			for(i=0,j=$('[data-week]').length;j<42;j++){
+				$('[data-week]:last').after('<div class="col-week col-disabled ta-c" data-week="">'+(++i)+'</div>');
+			}
+			$('#calendar').before('<div class="calendar-month ta-r">'+month[monthDay]+'</div>');
+		};
+		$('body')
+		.on('mouseover', '[data-week]', function(e){
+			var t = this;
+			$('[data-getdate]').addClass('d-n');
+			if(!$(t).is('[data-day]'))return;
+			$('[data-getdate="'+t.textContent+'"]').removeClass('d-n');
+		})
+		.on('mouseover', '[data-tip]', function(e){
+			e.preventDefault();
+			$('.tip-position').remove();
+			var t = this
+			, tip = t.dataset.tip
+			, side = t.dataset.tipSide
+			, title = t.dataset.tipTitle
+			, maxWidth = t.dataset.tipWidth
+			, x = $(t).offset().left
+			, y = $(t).offset().top
+			, width = t.getBoundingClientRect().width
+			, height = t.getBoundingClientRect().height
+			, point = $('<div class="tip-position" />').css({left:x, top:y}).append('<div class="tip-wrap" />').appendTo('body')
+			, wrap = $('.tip-wrap')
+			;
+			wrap.html('<div class="tip-text">'+tip+'</div>');
+			if(title){
+				wrap.addClass('tip-wrap-title').prepend('<h3 class="tip-title cf">'+title+'</h3>');
+			}
+			if(maxWidth){
+				wrap.addClass('tip-max-width').css({width: parseInt(maxWidth)})
+			}
+			var tipHeight = $('.tip-wrap').innerHeight()
+			, tipWidth = $('.tip-wrap').innerWidth()
+			;
+			switch(side){
+				case'left':
+					$('.tip-position').addClass('tip-left');
+					$('.tip-wrap').css({top:-(tipHeight/2)+height/2, right:'100%'});
+				break;
+				case'right':
+					$('.tip-position').addClass('tip-right');
+					$('.tip-wrap').css({top:-(tipHeight/2)+height/2, left:width});
+				break;
+				case'bottom':
+					$('.tip-position').addClass('tip-bottom');
+					$('.tip-wrap').css({top:height, left:-tipWidth/2+width/2});
+				break;
+				default:
+					$('.tip-position').addClass('tip-top');
+					$('.tip-wrap').css({left:-(tipWidth/2)+width/2, bottom:'100%'});
+			}
+		})
+		.on('mouseleave', '[data-tip]', function(){
+			$('.tip-position').remove()
+		})
+		
+		$.ajax({
 			  type: 'GET'
 			, url: 'https://clients6.google.com/calendar/v3/calendars/fyguarnieri@gmail.com/events'
 			, beforeSend: function(){
 				createCalendar();
+				$('.list').html('Carregando...');
 			}
 			, data: {
 				  calendarId: 'fyguarnieri@gmail.com'
@@ -56,20 +175,30 @@
 			}
 			, dataType: 'jsonp'
 			, success: function (e) {
-				var events = e.items;
-				for(i in events){
-					var event = events[i]
-					, weekDay =  event.start.date ? getWeek(new Date(event.start.date).toDateString()) : getWeek(new Date(event.start.dateTime).toDateString());
-					;
-					//console.log(weekDay=='Sun' ? 'Dom' : weekDay=='Mon' ? 'Seg' : weekDay=='Tue' ? 'Ter' : weekDay=='Wed' ? 'Qua' : weekDay=='Thu' ? 'Qui' : weekDay=='Fri' ? 'Sex' : 'Sab');
+				var events = e.items
+				, td = document.querySelectorAll('.enabled')
+				;
+				$('.list').html('');
+				for(i of td){
+					var day = i.textContent;
+					i.setAttribute('data-day', day);
+					i.setAttribute('data-month', monthDay+1);
+					$(i).append('<div class="calendar-events" />');
 				}
-				//do whatever you want with each
+				for(i of events){
+					console.log(i.summary+' - '+i.sequence);
+					var day = new Date(i.start.date ? (i.start.date).replace(/-/g,'/') : i.start.dateTime).getDate();
+					$('.list').append('<div class="list-item d-n" data-getdate="'+day+'">'+i.summary+'</div>');
+					$('[data-day="'+day+'"]').addClass('has-event');
+					var list = parseInt($('[data-day="'+day+'"] .calendar-events').attr('data-quantity'))||0;
+					$('[data-day="'+day+'"].enabled .calendar-events').attr('data-quantity', ++list);
+				}
 			}
 			, error: function (e) {
 				console.log(e.responseText)
 				//tell that an error has occurred
 			}
-		});*/
+		});
 	</script>
   </body>
 </html>

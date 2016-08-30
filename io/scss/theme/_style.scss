@@ -35,3 +35,33 @@ body{overflow: hidden;background-color: #000;color: #fff;font-family: Arial;}
 		cursor: default;
 	}
 }
+$tipArrowSize: 6px;
+$tipBg: rgba(#fff,.9);
+$tipColor: #666;
+$tipTitleColor: #fff;
+$tipTitleBg: #ec0927;
+.tip-position{position:absolute;width:0px;height:0px;z-index:1112;}
+.tip-wrap{
+	position:absolute;z-index:99;background-color: $tipBg;color: $tipColor;width:auto;border-radius:4px;box-shadow: 0 4px 10px rgba(#000, .1);
+	&:before{content:'';position:absolute;border:$tipArrowSize solid transparent;height:0;width:0;}
+	.tip-bottom &{
+		margin-top: $tipArrowSize + 2;
+		&:before{left: 50%;bottom: 100%;border-top-style: none;margin-left: -$tipArrowSize;border-bottom-color: $tipBg;}
+	}
+	.tip-top &{
+		margin-bottom: $tipArrowSize + 2;
+		&:before{left: 50%;top: 100%;border-bottom-style: none;margin-left: -$tipArrowSize;border-top-color: $tipBg;}
+	}
+	.tip-left &{
+		margin-right: $tipArrowSize + 2;
+		&:before{top: 50%;left: 100%;border-right-style: none;margin-top: -$tipArrowSize;border-left-color: $tipBg;}
+	}
+	.tip-right &{
+		margin-left: $tipArrowSize + 2;
+		&:before{top: 50%;right: 100%;border-left-style: none;margin-top: -$tipArrowSize;border-right-color: $tipBg;}
+	}
+}
+.tip-wrap-title{white-space: nowrap;}
+.tip-max-width{white-space: normal;}
+.tip-text{font-size:12px;padding:12px;line-height:20px;padding:2px 10px 3px;font-size:12px;border-bottom-style:none;white-space:nowrap;}
+.tip-title{padding: 3px 8px 0px;font-size: 15px;background-color: $tipTitleBg;color: $tipTitleColor;font-weight: bold;border-bottom: 1px solid $tipBg;margin: 1px;border-radius: 3px 3px 0 0;}
