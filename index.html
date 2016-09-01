@@ -24,7 +24,7 @@
 	<script src="io/js/all.js"></script>
 </head>
 <body id="home">
-	<video class="video" src="io/img/video.mp4" autoplay loop></video>
+	<video class="video" src="io/img/video.mp4?1" autoplay loop></video>
 	<nav class="nav col-1 col-lr ta-c" role="navigation">
 		<a class="nav-item d-b fa fa-facebook" target="_blank" href="//fb.com/figuarnieri" data-tip="Facebook" data-tip-side="right"></a>
 		<a class="nav-item d-b fa fa-twitter" target="_blank" href="//twitter.com/figuarnieri" data-tip="Twitter" data-tip-side="right"></a>
@@ -34,10 +34,10 @@
 		<a href="#" class="nav-item d-b fa fa-cubes" data-tip="Projects" data-tip-side="right"></a> -->
 	</nav>
 	<main role="main" class="col-19 col-lr">
-		<div class="col-10 col-lr height">
+		<div id="main" class="col-10 col-lr height">
 			<div class="list height"></div>
 		</div>
-		<div class="col-10 col-lr height">
+		<div id="info" class="col-10 col-lr height">
 			<h1 class="bigtitle ta-c">Filipe Guarnieri</h1>
 			<div id="calendar"></div>
 			<div class="social ta-r">
@@ -65,17 +65,17 @@
 			return new String(e).substring(0,3);
 		}
 		, createCalendar = function(){
-			$('#calendar').addClass('cf').html('<div class="calendar-week"></div><div class="calendar-days" />');
+			$('#calendar').addClass('cf').html('<div class="calendar-week col-20 col-lr"></div><div class="calendar-days col-20 col-lr" />');
 
 			/*DIAS DA SEMANA*/
 			for(i=0;i<7;i++){
-				$('#calendar .calendar-week').append('<div class="col-week ta-c">'+getWeek(weekDay[0][i])+'</div>');
+				$('#calendar .calendar-week').append('<div class="collumn ta-c">'+getWeek(weekDay[0][i])+'</div>');
 			}
 			for(i=0;i<7;i++){
-				$('#calendar .calendar-days').append('<div class="col-week ta-c" data-week="'+getWeek(weekDay[1][i])+'" data-month="'+monthDay+'" />');
+				$('#calendar .calendar-days').append('<div class="collumn ta-c" data-week="'+getWeek(weekDay[1][i])+'" data-month="'+monthDay+'" />');
 				$('[data-week="'+getWeek(init)+'"]:first').addClass('enabled').html('<div class="calendar-day">'+(init.getDate())+'</div>').prevAll('[data-week]');
 			}
-			$('#calendar .calendar-days .enabled:first').prev().html('<div class="calendar-day">'+monthBeforeOver.getDate()+'</div>').addClass('col-disabled')
+			$('#calendar .calendar-days .enabled:first').prev().html('<div class="calendar-day">'+monthBeforeOver.getDate()+'</div>').addClass('collumn-disabled')
 
 			/*COMPLETE MES ATUAL*/
 			for(var i=2;i<=over.getDate();i++){
@@ -83,24 +83,24 @@
 				if(lastEnabled.next().length){
 					lastEnabled.next().addClass('enabled').html('<div class="calendar-day">'+i+'</div>');
 				} else {
-					lastEnabled.after('<div class="col-week enabled ta-c" data-week="'+getWeek(weekDay[1][i%7])+'" data-month="'+(monthDay+1)+'"><div class="calendar-day">'+i+'</div></div>');
+					lastEnabled.after('<div class="collumn enabled ta-c" data-week="'+getWeek(weekDay[1][i%7])+'" data-month="'+(monthDay+1)+'"><div class="calendar-day">'+i+'</div></div>');
 				}
 			}
 			/*COMPLETE MES ANTERIOR*/
 			for(var i=monthBeforeOver.getDate()-1;i>0;i--){
 				var j = i%7
 				, week = j==0 ? 'Sun' : j==1 ? 'Mon' : j==2 ? 'Tue' : j==3 ? 'Wed' : j==4 ? 'Thu' : j==5 ? 'Fri' : 'Sat'
-				, lastDisabled = $('#calendar .calendar-days .col-disabled:first')
+				, lastDisabled = $('#calendar .calendar-days .collumn-disabled:first')
 				;
 				if(lastDisabled.prev().length){
-					lastDisabled.prev().addClass('col-disabled').html('<div class="calendar-day">'+i+'</div>');
+					lastDisabled.prev().addClass('collumn-disabled').html('<div class="calendar-day">'+i+'</div>');
 				}
 			}
 			/*COMPLETE MES POSTERIOR*/
 			for(i=0,j=$('[data-week]').length;j<42;j++){
-				$('[data-week]:last').after('<div class="col-week col-disabled ta-c" data-week="">'+(++i)+'</div>');
+				$('[data-week]:last').after('<div class="collumn collumn-disabled ta-c" data-week=""><div class="calendar-day">'+(++i)+'</div></div>');
 			}
-			$('#calendar').before('<div class="calendar-month ta-r">'+month[monthDay]+'</div>');
+			$('#calendar').prepend('<div class="month col-20 ta-r">'+month[monthDay]+'</div>');
 		};
 		$('body')
 		.on('mouseover', '[data-week]', function(e){
