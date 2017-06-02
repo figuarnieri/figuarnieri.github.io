@@ -1,5 +1,5 @@
         <footer id="down" class="ta-r" role="contentinfo">
-            <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> copyright 2017
+            <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
         </footer>
         <script data-js>
         </script>

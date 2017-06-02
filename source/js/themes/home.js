@@ -8,3 +8,8 @@ $('[data-menu]').on('click', (e) => {
     var t = $(e.target);
     $('.nav').toggleClass('nav-active');
 });
+$(window).on('load', (e) => {
+    let h = $('body').height();
+    $('.bg-cloud, .bg-square-inner').height(h);
+});
+
