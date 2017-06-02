@@ -58,7 +58,7 @@
     <body>
         <noscript class="noscript ta-c"></noscript>
         <div class="bg-cloud"></div>
-        <div class="bg-square"></div>
+        <div class="bg-square bg-square-inner"></div>
         <header id="up" role="banner">
             <nav class="nav">
                 <button class="nav-icon d-ib" data-menu>
@@ -66,43 +66,53 @@
                 </button>
                 <ul class="nav-list ta-r">
                     <li class="nav-item nav-index-1">
-                        <a href="#" class="nav-link d-b">
+                        <a href="index.html" class="nav-link d-b">
                             <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
                         </a>
                     </li>
                     <li class="nav-item nav-index-2">
-                        <a href="#" class="nav-link d-b">
+                        <a href="sobre.html" class="nav-link d-b">
                             <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
                         </a>
                     </li>
                     <li class="nav-item nav-index-3">
-                        <a href="#" class="nav-link d-b">
+                        <a href="portfolio.html" class="nav-link d-b">
                             <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
                         </a>
                     </li>
                     <li class="nav-item nav-index-4">
-                        <a href="#" class="nav-link d-b">
+                        <a href="labs.html" class="nav-link d-b">
                             <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
                         </a>
                     </li>
                     <li class="nav-item nav-index-5">
-                        <a href="#" class="nav-link d-b">
+                        <a href="contato.html" class="nav-link d-b">
                             <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
                         </a>
                     </li>
                 </ul>
             </nav>
         </header>
-        <main id="home" role="main" class="cf va-m">
-            <div class="home-aside ta-r">
-                <h1 class="home-bigtitle">Filipe Guarnieri</h1>
-                <h2 class="home-title">Front End</h2>
-                <h3 class="home-subtitle d-ib">senior</h3>
-                <ul class="social ta-r">
-                    <li class="social-item d-ib"><a data-unikode="bWFpbHRvOmZ5Z3Vhcm5pZXJpQGdtYWlsLmNvbQ==" class="social-link ta-c d-b fa fa-envelope-o"></a></li>
-                    <li class="social-item d-ib"><a href="https://github.com/figuarnieri/" target="_blank" class="social-link ta-c d-b fa fa-github-alt"></a></li>
-                    <li class="social-item d-ib"><a href="https://twitter.com/figuarnieri" target="_blank" class="social-link ta-c d-b fa fa-twitter"></a></li>
-                </ul>
+        <main id="main" role="main">
+            <div class="full-height cf">
+                <div class="pc-col-11">
+                    <h1 class="bigtitle">Sobre</h1>
+                    <div class="main-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus beatae facilis sequi dignissimos ducimus omnis fugit vero, earum, asperiores incidunt aliquam cumque, dolorum quia quam. Dignissimos, aliquid. Molestias natus, saepe voluptas quidem, totam doloremque, dolorum culpa nam in, quo suscipit minima dolor repellendus. Vel dolore nobis nam reprehenderit, aperiam a placeat ipsam nisi culpa animi harum distinctio eveniet expedita voluptatibus.</p>
+                        <p>Iure enim autem aliquid modi velit suscipit blanditiis, corporis illo, eius officiis ipsa ducimus minima debitis non, in sequi nobis ipsum cupiditate labore assumenda laborum magni! Voluptates hic voluptas, quisquam repellat esse consequatur, error ipsam velit facere ab necessitatibus nam ipsum eaque. Perspiciatis magnam, totam repudiandae aspernatur dolorum laborum atque, et distinctio dolore perferendis illo quia, aperiam soluta dicta saepe doloribus cum.</p>
+                        <p>Quasi sapiente eaque accusamus voluptatem nostrum, facilis aut optio tempore error commodi deleniti necessitatibus iure aliquam, unde nulla dicta quaerat, maiores at reprehenderit consectetur atque reiciendis. Temporibus ut ex, nobis eos. Voluptatum illo vel doloribus similique eum nihil perferendis saepe ex blanditiis assumenda sapiente fuga tempore aspernatur veritatis voluptatem ullam, numquam facilis corrupti! In temporibus molestiae laboriosam magni commodi cumque nesciunt atque non fuga, harum tenetur omnis, possimus dolor ipsam, beatae accusantium nihil delectus provident dicta amet corporis.</p>
+                    </div>
+                </div>
+                <aside class="-pc-col-1 pc-col-5">
+                    <div class="about-aside">
+                        <div class="about-image"></div>
+                        <ul class="about-list">
+                            <li class="about-item"><a href="#" class="about-link">Quem Sou</a></li>
+                            <li class="about-item"><a href="#" class="about-link">Curriculo</a></li>
+                            <li class="about-item"><a href="#" class="about-link">Hobbies</a></li>
+                        </ul>
+                    </div>
+                </aside>
             </div>
         </main>
         <footer id="down" class="ta-r" role="contentinfo">
@@ -119,6 +129,11 @@
                 var t = $(e.target);
                 $('.nav').toggleClass('nav-active');
             });
+            $(window).on('load', (e) => {
+                let h = $('body').height();
+                $('.bg-cloud, .bg-square-inner').height(h);
+            });
+
         </script>
 
         <script>

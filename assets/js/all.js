@@ -13166,12 +13166,13 @@ $('img').on('error', function(){
 })(jQuery);
 
 
-
-/*PLUGINS*/
-$('form').validationEngine();
-$('[data-mask]').each(function(e,f){
-	$(f).mask(f.getAttribute('data-mask'));
+$('[data-unikode]').each((i, tag) => {
+    var t = $(tag)
+    , url = atob(t.data('unikode'))
+    ;
+    t.attr('href', url);
 });
-
-
-/*MAIN*/
+$('[data-menu]').on('click', (e) => {
+    var t = $(e.target);
+    $('.nav').toggleClass('nav-active');
+});

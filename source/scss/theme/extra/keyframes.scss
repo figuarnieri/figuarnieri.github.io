@@ -1,0 +1,38 @@
+@keyframes home-line-subtitle {
+	from {
+		left: 50%;
+		right: 50%;
+	}
+	to {
+		left: 1%;
+		right: 0%;
+	}
+}
+@keyframes home-name-down {
+	from {
+		opacity: 0;
+		top: -50px;
+		transform: rotate(20deg);
+	}
+	to {
+		opacity: 1;
+		top: 0px;
+		transform: rotate(0deg);
+	}
+}
+@keyframes bg-square {
+	from {
+		left: -100vw;
+	}
+	to {
+		left: 0;
+	}
+}
+@keyframes home-bg-nuvem {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: -200% 0;
+	}
+}

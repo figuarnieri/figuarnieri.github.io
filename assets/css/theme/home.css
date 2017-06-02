@@ -1,12 +1,27 @@
-#home {
+#main .full-height {
   min-height: calc(100vh - 30px);
 }
 
-#home .home-aside {
+#main .bigtitle {
+  font-size: 4rem;
+  padding-top: 5px;
+}
+
+#main .main-text {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: .9rem;
+  line-height: 1.5rem;
+}
+
+#main .main-text p {
+  margin-bottom: 2rem;
+}
+
+#main .home-aside {
   width: 100%;
 }
 
-#home .home-bigtitle, #home .home-title, #home .home-subtitle, #home .social-link {
+#main .home-bigtitle, #main .home-title, #main .home-subtitle, #main .social-link {
   opacity: 0;
   position: relative;
   animation: home-name-down .6s;
@@ -14,19 +29,19 @@
   transform-origin: right bottom;
 }
 
-#home .home-bigtitle {
+#main .home-bigtitle {
   color: #e66;
   font-size: 2rem;
 }
 
-#home .home-title {
+#main .home-title {
   color: #333;
   font-size: 3.57rem;
   line-height: 3.4rem;
   animation-delay: .4s;
 }
 
-#home .home-subtitle {
+#main .home-subtitle {
   color: #999;
   font-size: 3rem;
   line-height: 3rem;
@@ -35,7 +50,7 @@
   animation-delay: .8s;
 }
 
-#home .home-subtitle:before {
+#main .home-subtitle:before {
   content: '';
   position: absolute;
   top: 100%;
@@ -45,7 +60,7 @@
   animation-delay: .4s;
 }
 
-#home .social-link {
+#main .social-link {
   color: #030303;
   border: 2px solid #030303;
   border-radius: 100%;
@@ -57,7 +72,52 @@
   transition: color .6s, border-color .6s;
 }
 
-#home .social-link:hover {
+#main .social-link:hover {
   color: #e66;
   border-color: #e66;
+}
+
+#main .about-aside {
+  padding: 100px 40px 0;
+}
+
+#main .about-item {
+  background-color: #e99;
+  transform: rotate(4deg);
+  width: 110%;
+  position: relative;
+  left: -5%;
+}
+
+#main .about-item:nth-child(odd) {
+  background-color: #f2afaf;
+  transform: rotate(-3deg);
+}
+
+#main .about-item:hover {
+  z-index: 2;
+}
+
+#main .about-link {
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 10px 0;
+}
+
+#main .about-link:hover {
+  color: #e99;
+  background-color: #eee;
+  box-shadow: 0 0 10px #999;
+}
+
+#main .about-image {
+  height: 320px;
+  filter: grayscale(1);
+  background: url(../img/sobre-perfil.jpg) 50% 50%;
+  background-size: cover;
+  transition: filter .6s;
+}
+
+#main .about-image:hover {
+  filter: grayscale(0);
 }

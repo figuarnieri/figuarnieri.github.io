@@ -59,15 +59,15 @@ body {
   transform: rotate(-45deg) translateX(-33vmax) translateY(-70vmax);
 }
 
-.bg-square.loading {
-  transform: rotate(-45deg) translateX(37vmax) translateY(0vmax);
-  background-color: white;
+.bg-square-inner:before {
+  transform: rotate(-51deg) translateX(11vmax) translateY(-20vmax);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .bg-cloud {
   z-index: -2;
   background-image: url(../img/nuvem-bg.jpg);
-  animation: home-bg-nuvem 30s linear 0s infinite;
+  animation: home-bg-nuvem 20s linear 0s infinite;
   background-size: auto 100%;
   filter: grayscale(1);
   opacity: .6;

@@ -1,0 +1,91 @@
+@import "_compass.scss";
+@import "_device.scss";
+.cf {
+	display: flex;flex-flow: wrap;
+	&:before, &:after{content: "";display: block;}
+	&:after{clear: both;}
+}
+.ta-c{text-align: center;}
+.ta-r{text-align: right;}
+.ta-l{text-align: left;}
+.va-t{vertical-align: top;align-items: flex-start;}
+.va-m{vertical-align: middle;align-items: center;}
+.va-b{vertical-align: bottom;align-items: flex-end;}
+.d-n{display: none;}
+.d-ib{display: inline-block;}
+.d-b{display: block;}
+.fl-l{float: left;}
+.fl-r{float: right;}
+.wrap{width: 100%;margin-left: auto;margin-right: auto;position: relative;}
+._text, ._submit, ._button, ._cancel{display: inline-block;}
+.img-center{display: block;margin-left: auto;margin-right: auto;}
+.img-responsive{display: block;max-width: 100%;height: auto;}
+.noscript{
+	z-index: 9999;position: relative;
+	&:before{content: 'Infelizmente sua página não poderá funcionar corretamente, pois o javascript do seu navegador está desabilitado. Habilite-o para ter uma melhor navegação e funcionalidades neste site.';background-color: #c00;color: #fff;font-family: Arial;font-size: 16px;padding: 20px;display: block;}
+}
+img:not(.img-error, [src$=".png"]){background-image: url(../img/load-img.gif);background-position: center;background-repeat: no-repeat;}
+.img-error{box-shadow: 0 0 10px #c00;outline: 1px solid #c00;}
+[pseudo-before]{content: attr(pseudo-before);}
+[pseudo-after]{content: attr(pseudo-after);}
+
+/* GRID 20 COLLUMNS */
+$grid-width: 5%;
+%col-init{min-height: 1px;padding-left: 3px;padding-right: 3px;}
+.col-l{padding-left: 0;}
+.col-r{padding-right: 0;}
+.col-lr, .col-rl{padding-left: 0;padding-right: 0;}
+
+/* MOBILE */
+$device-class: (mobileLand: m,tablet: t,pc: pc);
+$mobile-size: (25: 25%,33: 33.3333%,50: 50%,75: 75%,80: 80%,100: 100%);
+@each $key-size, $value-size in $mobile-size {
+	.col-#{$key-size}{
+		@extend %col-init;
+		width: #{$value-size};
+	}
+}
+@each $key, $value in $device-class {
+	@for $i from 1 through 20 {
+		.#{$value}-col-#{$i} {
+			@extend %col-init;
+		}
+	}
+	@each $key-size, $value-size in $mobile-size {
+		.#{$value}-col-#{$key-size}{
+			@extend %col-init;
+		}
+	}
+	@include device($key) {
+		@for $i from 1 through 20 {
+			.#{$value}-col-#{$i} {
+				width: $grid-width*$i;
+			}
+		}
+		@for $i from 1 through 19 {
+			.-#{$value}-col-#{$i} {
+				margin-left: $grid-width*$i;
+			}
+		}
+		@each $key-size, $value-size in $mobile-size {
+			.#{$value}-col-#{$key-size}{
+				width: #{$value-size};
+			}
+		}
+		.#{$value}-col-r{padding-right: 0;}
+		.#{$value}-col-l{padding-left: 0;}
+		.#{$value}-col-rl, .#{$value}-col-lr{padding-left: 0;padding-right: 0;}
+
+		.#{$value}-ta-c{text-align: center;}
+		.#{$value}-ta-r{text-align: right;}
+		.#{$value}-ta-l{text-align: left;}
+		.#{$value}-va-t{vertical-align: top;align-items: flex-start;}
+		.#{$value}-va-m{vertical-align: middle;align-items: center;}
+		.#{$value}-va-b{vertical-align: bottom;align-items: flex-end;}
+		.#{$value}-d-n{display: none;}
+		.#{$value}-d-ib{display: inline-block;}
+		.#{$value}-d-b{display: block;}
+		.#{$value}-fl-l{float: left;}
+		.#{$value}-fl-r{float: right;}
+	}
+}
