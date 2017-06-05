@@ -98,12 +98,6 @@
   display: block;
 }
 
-img:not(.img-error):not([src$=".png"]) {
-  background-image: url(../img/load-img.gif);
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .img-error {
   box-shadow: 0 0 10px #c00;
   outline: 1px solid #c00;

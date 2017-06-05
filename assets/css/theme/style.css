@@ -9,7 +9,6 @@ body {
   background-color: #f0f0f0;
   background-image: url(../img/bg.jpg);
   text-transform: uppercase;
-  padding: 0 2%;
   overflow-x: hidden;
 }
 
@@ -34,7 +33,7 @@ body {
 .bg-cloud, .bg-square {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   overflow: hidden;
@@ -43,7 +42,6 @@ body {
 .bg-square {
   z-index: -1;
   animation: bg-square .6s forwards;
-  transition: transform 1s, background 1s;
 }
 
 .bg-square:before {
@@ -53,15 +51,16 @@ body {
   top: 0;
   width: 100vmax;
   height: 100vmax;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 30px #eee;
   border-radius: 20px;
   transform: rotate(-45deg) translateX(-33vmax) translateY(-70vmax);
+  transition: transform 1s, background 1s;
 }
 
 .bg-square-inner:before {
   transform: rotate(-51deg) translateX(11vmax) translateY(-20vmax);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .bg-cloud {
@@ -73,20 +72,86 @@ body {
   opacity: .6;
 }
 
+.portfolio-content {
+  position: absolute;
+  transition: background-color .6s;
+  background-color: transparent;
+  box-shadow: 0 0 20px #ccc;
+}
+
+.portfolio-content .button-close {
+  color: #e99;
+  font-size: 1.3rem;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.portfolio-content .button-close:hover {
+  color: #e33;
+}
+
+.portfolio-content .portfolio-img {
+  width: 25vw;
+  height: auto;
+}
+
+.portfolio-content .portfolio-main {
+  padding: 20px;
+}
+
+.portfolio-content-render {
+  background-color: #fff;
+}
+
+.portfolio-eq-0 .portfolio-img, .portfolio-eq-1 .portfolio-img {
+  margin: -20px 20px 0 -20px;
+  float: left;
+}
+
+.portfolio-eq-2 .portfolio-img, .portfolio-eq-3 .portfolio-img {
+  margin: -20px -20px 0 20px;
+  float: right;
+}
+
+.portfolio-title {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #e66;
+}
+
+.portfolio-text {
+  font-family: Arial, sans-serif;
+  font-size: .9rem;
+  line-height: 1.8em;
+}
+
 ._text {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   background-color: #fff;
   color: #666;
   padding: 10px 15px;
   font-size: .9rem;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 
 ._text:focus {
-  box-shadow: 0 0 10px #999;
+  box-shadow: 0 0 10px #ddd;
 }
 
 ._submit {
-  /*background-color: ;color: ;padding: ;font-size: ;*/
+  background-color: #888;
+  color: #fff;
+  padding: 10px 35px;
+  font-size: 1.1rem;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #555;
+}
+
+._submit:hover {
+  background-color: #aaa;
+  border-bottom-color: #888;
 }
 
 ._button {

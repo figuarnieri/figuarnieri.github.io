@@ -40,6 +40,62 @@
   .formError .formErrorArrow .line3 {
     background-color: #ee0101;
   }
+  #up .nav-icon {
+    margin-right: -3px;
+  }
+  #main {
+    padding-top: 50px;
+  }
+  #main .bigtitle {
+    font-size: 2rem;
+    padding: 0 20px;
+  }
+  #main .main-text {
+    padding: 0 20px;
+  }
+  #main .about-aside {
+    padding-top: 0;
+  }
+  #main .contact-map {
+    height: calc(50vh);
+    transform: skewX(0deg);
+  }
+  #main .contact-content {
+    width: 100%;
+  }
+  #main .contact-map-render {
+    transform: skewX(0deg);
+  }
+  #main .contact-form {
+    padding: 20px;
+  }
+  #main .contact-social .fa {
+    margin: 0 30px;
+  }
+  #main .portfolio-item {
+    min-height: 40vh;
+    height: auto;
+  }
+  #main .portfolio-item:before {
+    background-image: none;
+  }
+  #main .portfolio-main {
+    padding: 20px;
+    background-color: #eee;
+  }
+  #main .portfolio-img {
+    height: 30vh;
+    width: auto;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  #main .portfolio-hidden {
+    position: relative;
+    z-index: 2;
+  }
+  #main .portfolio-close {
+    margin-bottom: 15px;
+  }
 }
 
 @media (max-width: 480px) {

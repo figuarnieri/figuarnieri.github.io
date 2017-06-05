@@ -24,7 +24,6 @@
 	z-index: 9999;position: relative;
 	&:before{content: 'Infelizmente sua página não poderá funcionar corretamente, pois o javascript do seu navegador está desabilitado. Habilite-o para ter uma melhor navegação e funcionalidades neste site.';background-color: #c00;color: #fff;font-family: Arial;font-size: 16px;padding: 20px;display: block;}
 }
-img:not(.img-error, [src$=".png"]){background-image: url(../img/load-img.gif);background-position: center;background-repeat: no-repeat;}
 .img-error{box-shadow: 0 0 10px #c00;outline: 1px solid #c00;}
 [pseudo-before]{content: attr(pseudo-before);}
 [pseudo-after]{content: attr(pseudo-after);}

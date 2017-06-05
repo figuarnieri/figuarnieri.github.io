@@ -1,27 +1,27 @@
 @font-face {
   font-family: 'Material Icons';
-  src: local("Material Icons"), url("/assets/fonts/MaterialIcons-Regular.woff2") format("woff2"), url("/assets/fonts/MaterialIcons-Regular.woff") format("woff");
+  src: local("Material Icons"), url("../fonts/MaterialIcons-Regular.woff2") format("woff2"), url("../fonts/MaterialIcons-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/assets/fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("/assets/fonts/fontawesome-webfont.woff?v=4.7.0") format("woff");
+  src: url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hawcons Stroke';
-  src: url("/assets/fonts/hawcons-stroke.woff2") format("woff2"), url("/assets/fonts/hawcons-stroke.woff") format("woff");
+  src: url("../fonts/hawcons-stroke.woff2") format("woff2"), url("../fonts/hawcons-stroke.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Ionicons';
-  src: url("/assets/fonts/ionicons.woff2") format("woff2"), url("/assets/fonts/ionicons.woff") format("woff");
+  src: url("../fonts/ionicons.woff2") format("woff2"), url("../fonts/ionicons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

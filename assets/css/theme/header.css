@@ -1,20 +1,12 @@
 #up {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  z-index: 1;
-  /* .nav-index-2{
-		.nav-link{padding: 20px 106px 20px 0;}
-	}
-	.nav-index-3{
-		.nav-link{padding: 20px 92px 20px 0;}
-	}
-	.nav-index-4{
-		.nav-link{padding: 20px 78px 20px 0;}
-	}
-	.nav-index-5{
-		.nav-link{padding: 20px 64px 20px 0;}
-	} */
+  z-index: 3;
+}
+
+#up .nav:not(.nav-active) .nav-text {
+  text-shadow: 0 0 40px #fff, 0 0 40px #fff, 0 0 30px #fff, 0 0 20px #fff;
 }
 
 #up .nav-icon {

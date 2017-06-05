@@ -16,6 +16,28 @@
 			.line3{background-color: #ee0101;}
 		}
 	}
+	#up .nav-icon{margin-right: -3px;}
+	#main{
+		padding-top: 50px;
+		.bigtitle{font-size: 2rem;padding: 0 20px;}
+		.main-text{padding: 0 20px;}
+		.about-aside{padding-top: 0;}
+		.contact-map{height: calc(50vh);transform: skewX(0deg);}
+		.contact-content{width: 100%;}
+		.contact-map-render{transform: skewX(0deg);}
+		.contact-form{padding: 20px;}
+		.contact-social{
+			.fa{margin: 0 30px;}
+		}
+		.portfolio-item{
+			min-height: 40vh;height: auto;
+			&:before{background-image: none;}
+		}
+		.portfolio-main{padding: 20px;background-color: #eee;}
+		.portfolio-img{height: 30vh;width: auto;display: block;margin: 0 auto 20px;}
+		.portfolio-hidden{position: relative;z-index: 2;}
+		.portfolio-close{margin-bottom: 15px;}
+	}
 }
 @include device(mobile-land) {
 	.wrap{width: 90%;}
