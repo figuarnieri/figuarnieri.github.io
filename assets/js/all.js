@@ -13335,3 +13335,7 @@ let isHome = (e) => {
     });
 }
 refreshPages();
+if(location.protocol==='http:'){
+    var link = location.href;
+    location.href = link.replace('http:','https:');
+}
