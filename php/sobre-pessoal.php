@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
     <main id="main" role="main">
         <div class="full-height cf">
             <h1 class="bigtitle pc-col-20">Sobre</h1>
@@ -21,4 +21,4 @@
             </aside>
         </div>
     </main>
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

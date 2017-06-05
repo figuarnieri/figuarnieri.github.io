@@ -114,28 +114,34 @@
             </ul>
         </nav>
     </header>
+
     <main id="main" role="main">
         <div class="full-height cf">
-            <h1 class="bigtitle pc-col-20">Sobre</h1>
-            <div class="pc-col-11 -pc-col-1 ">
-                <div class="main-text">
-                    <p>Sou Cristão ❤, líder do ministério de Jovens da Sara Nossa Terra Cursino, e faço o máximo para ajudar o crescimento pessoal e espiritual de qualquer um que esteja ao meu redor</p>
-                    <p>Em 2015 fiz uma viagem para fora do Brasil, onde fez eu ter um amor por viagens e conhecer novasa culturas</p>
-                    <p>Moro na melhor cidade da galaxia (São Paulo), que me dá muita criatividade em tudo que faço profissionalmente e como líder</p>
+            <div class="pc-col-20 t-col-20">
+                <h1 class="bigtitle">Labs</h1>
+                <div class="cf va-t">
+                    <div class="pc-col-7 -pc-col-1 col-lr t-d-n">
+                        <div class="labs-images">imagem</div>
+                    </div>
+                    <div class="pc-col-11 t-col-20">
+                        <ul class="accordion" id="labs">
+                            <li class="labs-item">
+                                <h2 data-open-next class="labs-title fa fa-minus">Github</h2>
+                                <div class="labs-content">
+                                    <div class="labs-text">
+                                        <ul class="labs-list">
+                                            <li class="labs-list-text" v-for="item in items"><a class="labs-link" target="_blank" v-bind:href="item.link">{{item.title}}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <aside class="-pc-col-1 pc-col-5 t-col-20">
-                <div class="about-aside">
-                    <div class="about-image"></div>
-                    <ul class="about-list">
-                        <li class="about-item ta-c"><a class="about-link d-b" data-get="#main" data-get-to="#main" href="sobre-profissional.php">Profissional</a></li>
-                        <li class="about-item ta-c"><a class="about-link d-b" data-get="#main" data-get-to="#main" href="sobre-pessoal.php">Pessoal</a></li>
-                        <li class="about-item ta-c"><a href="https://docs.google.com/document/export?format=pdf&id=1mSU2DS4XLoVt0ZZE3PpItBGKx52cnPOr46sc-YjqSAk&token=AC4w5VgZ02UWpm_tQBskiEjx-Vm05nQvGw%3A1496592511126" class="about-link d-b">Curriculo</a></li>
-                    </ul>
-                </div>
-            </aside>
         </div>
     </main>
+
     <footer id="down" class="ta-r" role="contentinfo">
         <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
     </footer>

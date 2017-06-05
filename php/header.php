@@ -18,14 +18,14 @@
         <meta property="og:description" content="Front End Senior, em São Paulo com experiência de mercado em projetos de websites, hotsites, landpages, intranets, portais, single pages e blogs.">
         <meta property="og:url" content="http://figuarnieri.github.io/">
         <meta property="og:site_name" content="Filipe Guarnieri">
-        <meta property="og:image" content="assets/img/favicons/android-icon-192x192.png">
+        <meta property="og:image" content="../assets/img/favicons/android-icon-192x192.png">
         <meta property="og:image:width" content="192">
         <meta property="og:image:height" content="192">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:description" content="Front End Senior, em São Paulo com experiência de mercado em projetos de websites, hotsites, landpages, intranets, portais, single pages e blogs.">
         <meta name="twitter:title" content="Filipe Guarnieri">
         <meta name="twitter:site" content="http://figuarnieri.github.io/">
-        <meta name="twitter:image" content="assets/img/favicons/android-icon-192x192.png">
+        <meta name="twitter:image" content="../assets/img/favicons/android-icon-192x192.png">
 
         <meta name="author" content="@figuarnieri">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1">
@@ -33,25 +33,25 @@
         <meta name="description" content="Front End Senior, em São Paulo com experiência de mercado em projetos de websites, hotsites, landpages, intranets, portais, single pages e blogs.">
         <meta name="keywords" content="Filipe Guarnieri, Front End Senior, HTML 5, São Paulo, Jesus">
 
-        <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+        <meta name="msapplication-TileImage" content="../assets/img/favicons/ms-icon-144x144.png">
         <meta name="msapplication-TileColor" content="#eeeeee">
         <meta name="theme-color" content="#eeeeee">
 
-        <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="../assets/img/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/favicon-16x16.png">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="manifest" href="assets/img/favicons/manifest.json">
+        <link rel="manifest" href="../assets/img/favicons/manifest.json">
         <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
         <link rel="stylesheet" href="assets/css/all.css?<?=time()?>">

@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
     <main id="main" role="main">
         <div class="full-height cf va-m">
             <div class="pc-col-19 ta-r">
@@ -13,4 +13,4 @@
             </div>
         </div>
     </main>
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>

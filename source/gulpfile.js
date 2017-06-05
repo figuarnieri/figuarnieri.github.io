@@ -7,6 +7,7 @@ var gulp = require('gulp')
 , jsArray = [
       'js/io/jquery-3.1.1.js'
     , 'js/io/default.js'
+    , 'js/io/vue.min.js'
     , 'js/out/*.js'
     , 'js/themes/*.js'
 ]

@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'header.php'; ?>
     <main id="main" role="main">
         <div class="full-height cf">
             <div class="pc-col-11">
@@ -23,13 +23,13 @@
                     );
                     foreach ($item as $key => $items) { ?>
                         <div class="pc-col-5 t-col-20 col-lr">
-                            <div data-portfolio class="portfolio-item" style="background-image: url(assets/img/<?=$items[2]?>);">
+                            <div data-portfolio class="portfolio-item" style="background-image: url(../assets/img/<?=$items[2]?>);">
                                 <div class="portfolio-hidden d-n">
                                     <div class="portfolio-main">
                                         <div class="pc-d-n ta-r">
                                             <button data-portfolio-close class="portfolio-close fa fa-times">fechar</button>
                                         </div>
-                                        <img class="portfolio-img" src="assets/img/<?=$items[2]?>" alt="">
+                                        <img class="portfolio-img" src="../assets/img/<?=$items[2]?>" alt="">
                                         <h2 class="portfolio-title"><?=$items[0]?></h2>
                                         <p class="portfolio-text"><?=$items[1]?></p>
                                     </div>
@@ -41,4 +41,4 @@
             </div>
         </div>
     </main>
-<?php include 'includes/footer.php'; ?>
+<?php include 'footer.php'; ?>
