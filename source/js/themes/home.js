@@ -56,31 +56,24 @@ $('body').on('click', '[data-get]', (e) => {
     , to = t.data('get-to')
     ;
     e.preventDefault();
-
     $('.nav').removeClass('nav-active');
-
-    $.ajax({
-          url: url
-        , method: 'post'
-        , beforeSend: (f) => {
-            $(to).html('Carregando...');
-            isHome(url);
-        }
-        , success: (f) => {
-            let html = new DOMParser().parseFromString(f, "text/html")
-            , htmlNew = $(local, html).html()
-            ;
-            $(to).html(htmlNew);
-            refreshPages();
-            history.pushState('', 'Filipe Guarnieri - Web Developer', url);
-        }
+    fetch(url).then((res) => {
+        $(to).html('Carregando...');
+        isHome(url);
+        return res.text()
+    }).then((res) => {
+        let html = new DOMParser().parseFromString(res, "text/html")
+        , htmlNew = $(local, html).html()
+        ;
+        $(to).html(htmlNew);
+        refreshPages();
+        history.pushState('', 'Filipe Guarnieri - Web Developer', url);
     });
 });
 $(window).on('load', (e) => {
     isHome(location.pathname);
 });
 let isHome = (e) => {
-    console.log(e);
     (/index/gi.test(e)||e==='/') ? $('.bg-square').removeClass('bg-square-inner') : $('.bg-square').addClass('bg-square-inner');
     return;
 }
