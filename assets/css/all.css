@@ -12657,6 +12657,78 @@ fieldset, hr, input, button, select, textarea, keygen, img {
   border-bottom-color: #e99;
 }
 
+#main .svg-wrap {
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#main .svg-recipient {
+  width: 100%;
+  margin-top: 160px;
+  position: relative;
+  z-index: 2;
+}
+
+#main .svg-recipient .st0 {
+  fill: #52C6B4;
+}
+
+#main .svg-recipient .st2 {
+  fill: #FFFFFF;
+}
+
+#main .svg-recipient .st3 {
+  fill: #EE6666;
+}
+
+#main .svg-ball {
+  position: absolute;
+}
+
+#main .svg-ball-red {
+  fill: #e66;
+}
+
+#main .svg-ball-white {
+  fill: #fff;
+}
+
+#main .svg-ball-1 {
+  width: 50px;
+  left: 120px;
+  top: 0px;
+  animation: labs-bubbles 10s linear infinite;
+}
+
+#main .svg-ball-2 {
+  width: 40px;
+  left: 60px;
+  top: 40px;
+  animation: labs-bubbles 15s linear infinite;
+}
+
+#main .svg-ball-3 {
+  width: 30px;
+  left: 140px;
+  top: 70px;
+  animation: labs-bubbles 13s linear infinite;
+}
+
+#main .svg-ball-4 {
+  width: 10px;
+  left: 110px;
+  top: 100px;
+  animation: labs-bubbles 2s linear infinite;
+}
+
+#main .svg-ball-5 {
+  width: 20px;
+  left: 110px;
+  top: 130px;
+  animation: labs-bubbles 4s linear infinite;
+}
+
 #main .contact-form {
   font-family: Arial, sans-serif;
   text-transform: none;
@@ -12919,6 +12991,34 @@ body {
   }
   to {
     background-position: -1927px 0;
+  }
+}
+
+@keyframes labs-bubbles {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+    margin-top: 200px;
+    transform: scale(0.1);
+  }
+  20% {
+    margin-left: 20px;
+  }
+  40% {
+    margin-left: 0px;
+  }
+  60% {
+    margin-left: 20px;
+    opacity: 1;
+  }
+  80% {
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 0px;
+    margin-top: 0px;
+    transform: scale(1);
   }
 }
 
