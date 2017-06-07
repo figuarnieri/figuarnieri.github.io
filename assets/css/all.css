@@ -12841,7 +12841,7 @@ body {
   top: 0;
   width: 100vmax;
   height: 100vmax;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 0, 0, 0.4);
   box-shadow: 0 0 30px #eee;
   border-radius: 20px;
   transform: rotate(-45deg) translateX(-33vmax) translateY(-70vmax);
