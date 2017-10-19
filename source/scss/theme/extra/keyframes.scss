@@ -1,65 +1,22 @@
+@import "../../lib/mixins";
+
 @keyframes home-line-subtitle {
-	from {
-		left: 50%;
-		right: 50%;
-	}
-	to {
-		left: 1%;
-		right: 0%;
-	}
+	from {left: 50%;right: 50%;}
+	to {left: 1%;right: 0%;}
 }
 @keyframes home-name-down {
-	from {
-		opacity: 0;
-		top: -50px;
-		transform: rotate(20deg);
-	}
-	to {
-		opacity: 1;
-		top: 0px;
-		transform: rotate(0deg);
-	}
+	from {opacity: 0;top: -50px;transform: rotate(20deg);}
+	to {opacity: 1;top: 0px;transform: rotate(0deg);}
 }
 @keyframes bg-square {
-	from {
-		left: -100vw;
-	}
-	to {
-		left: 0;
-	}
+	from {transform: rotate(45deg) translate(-1120px, 1090px);}
+	to {transform: rotate(45deg) translate(-400px, 210px);}
 }
 @keyframes home-bg-nuvem {
-	from {
-		background-position: 0 0;
-	}
-	to {
-		background-position: -1927px 0;
-	}
+	from {background-position: 0 0;}
+	to {background-position: -1927px 0;}
 }
-@keyframes labs-bubbles {
-	0% {
-		opacity: 0;
-		margin-left: 0px;
-		margin-top: 200px;
-		transform: scale(.1);
-	}
-	20% {
-		margin-left: 20px;
-	}
-	40% {
-		margin-left: 0px;
-	}
-	60% {
-		margin-left: 20px;
-		opacity: 1;
-	}
-	80% {
-		margin-left: 0px;
-	}
-	100% {
-		opacity: 0;
-		margin-left: 0px;
-		margin-top: 0px;
-		transform: scale(1);
-	}
+@keyframes about-img {
+	from {transform: translateY(400px) scale(0);}
+	to {transform: translateY(-100px) scale(1);}
 }

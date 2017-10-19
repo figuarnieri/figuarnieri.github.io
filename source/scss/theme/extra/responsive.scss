@@ -1,49 +1,35 @@
-@import "../../io/_device.scss";
+@import "../../lib/mixins";
 
-@include device(tablet) {
+@include device(tablet-landscape) {
+	@keyframes bg-square {
+		from {
+			transform: rotate(45deg) translate(-960px, 190px);
+		}
+		to {
+			transform: rotate(45deg) translate(-660px, 190px);
+		}
+	}
+	body{
+		&:after{transform: rotate(45deg) translate(-660px, 190px);opacity: .2;}
+	}
 	.wrap{width: 96%;}
-	.formError{
-		position: relative !important;top: 0 !important;left: 0 !important;margin-top: 0 !important;
-		.formErrorContent{max-width: 100%;}
-		.formErrorContent{border-style: none;box-shadow: none;border-radius: 0px;}
-		.formErrorArrow{
-			div{box-shadow: none;}
-			.line8{border-left-style: none;border-right-style: none;}
-			.line7{border-left-style: none;border-right-style: none;}
-			.line6{border-left-style: none;border-right-style: none;}
-			.line5{background-color: #ee0101;}
-			.line4{background-color: #ee0101;}
-			.line3{background-color: #ee0101;}
-		}
+	.main{
+		.full-height{min-height: calc(100vh - 90px);}
+		&--bigtitle{font-size: 3rem;}
+		&--subtitle{font-size: 1.6rem;}
 	}
-	#up .nav-icon{margin-right: -3px;}
-	#main{
-		padding-top: 50px;
-		.bigtitle{font-size: 2rem;padding: 0 20px;}
-		.main-text{padding: 0 20px;}
-		.about-aside{padding-top: 0;}
-		.contact-map{height: calc(50vh);transform: skewX(0deg);}
-		.contact-content{width: 100%;}
-		.contact-map-render{transform: skewX(0deg);}
-		.contact-form{padding: 20px;}
-		.contact-social{
-			.fa{margin: 0 30px;}
-		}
-		.portfolio-item{
-			min-height: 40vh;height: auto;
-			&:before{background-image: none;}
-		}
-		.portfolio-main{padding: 20px;background-color: #eee;}
-		.portfolio-img{height: 30vh;width: auto;display: block;margin: 0 auto 20px;}
-		.portfolio-hidden{position: relative;z-index: 2;}
-		.portfolio-close{margin-bottom: 15px;}
-	}
+	.header{height: 45px;position: fixed;background-color: #fff;width: 100%;z-index: 2;}
 }
-@include device(mobile-land) {
+@include device(mobile-landscape) {
 	.wrap{width: 90%;}
+    .main{
+    	&--bigtitle{font-size: 2.5rem;}
+    }
 }
 @include device(mobile) {
 	.wrap{width: 90%;}
+    .main{
+    	&--bigtitle{font-size: 2rem;}
+    }
 }
-
 

@@ -80,7 +80,7 @@
         <noscript class="noscript ta-c"></noscript>
         <div class="bg-cloud"></div>
         <div class="bg-square"></div>
-        <header id="up" role="banner">
+        <header class="header" role="banner">
             <nav class="nav">
                 <button class="nav-icon d-ib" data-menu>
                     <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>

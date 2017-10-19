@@ -1,0 +1,1 @@
+new Maskfy('[data-mask]');

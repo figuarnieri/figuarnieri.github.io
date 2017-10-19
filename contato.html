@@ -54,8 +54,22 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <script src="assets/js/all.js" async="async"></script>
+    <link rel="stylesheet" href="dist/css/lib/reset.min.css">
+    <link rel="stylesheet" href="dist/css/lib/default.min.css">
+    <link rel="stylesheet" href="dist/css/lib/grid.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.tipfy.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.validity.min.css">
+    <link rel="stylesheet" href="dist/css/theme/style.min.css">
+    <link rel="stylesheet" href="dist/css/theme/header.min.css">
+    <link rel="stylesheet" href="dist/css/theme/footer.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/keyframes.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/responsive.min.css">
+    <script src="/dist/js/ibaro.tipfy.min.js" async=""></script>
+    <script src="/dist/js/ibaro.validity.min.js" async=""></script>
+    <script src="/dist/js/plugin.tipfy.min.js" async=""></script>
+    <script src="/dist/js/plugin.validity.min.js" async=""></script>
+    <script src="/dist/js/main.min.js" async=""></script>
 
     <title>Filipe Guarnieri - Front End / @figuarnieri</title>
     <script type="application/ld+json">
@@ -76,89 +90,87 @@
         }
     </script>
 </head>
-<body>
+<body class="boxcontent">
     <noscript class="noscript ta-c"></noscript>
-    <div class="bg-cloud"></div>
-    <div class="bg-square"></div>
-    <header id="up" role="banner">
-        <nav class="nav">
-            <button class="nav-icon d-ib" data-menu>
-                <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>
-            </button>
-            <ul class="nav-list ta-r">
-                <li class="nav-item nav-index-1">
-                    <a data-get="#main" data-get-to="#main" href="index.html" class="nav-link d-b">
-                        <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
+    <header class="header">
+        <input class="header--check" type="checkbox" id="Menu">
+        <nav class="header--nav">
+            <label for="Menu" class="header--menu">
+                <span class="header--menu-text">Menu</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <ul class="header--list">
+                <li class="header--item header--item-1">
+                    <a href="index.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-home">Home</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-2">
-                    <a data-get="#main" data-get-to="#main" href="sobre-profissional.html" class="nav-link d-b">
-                        <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
+                <li class="header--item header--item-2">
+                    <a href="sobre-profissional.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-user-o">Sobre</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-3">
-                    <a data-get="#main" data-get-to="#main" href="portfolio.html" class="nav-link d-b">
-                        <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
+                <li class="header--item header--item-3">
+                    <a href="portfolio.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-file-code-o">Portfolio</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-4">
-                    <a data-get="#main" data-get-to="#main" href="labs.html" class="nav-link d-b">
-                        <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
+                <li class="header--item header--item-4">
+                    <a href="labs.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-flask">Labs</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-5">
-                    <a data-get="#main" data-get-to="#main" href="contato.html" class="nav-link d-b">
-                        <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
+                <li class="header--item header--item-5">
+                    <a href="contato.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-envelope-o">Contato</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main" role="main">
-        <div class="full-height cf">
-            <div class="pc-col-20 col-lr t-col-20 ">
-                <h1 class="bigtitle">Contato</h1>
-                <div class="contact cf">
-                    <div class="pc-col-9 col-lr t-col-20 ">
-                        <div class="contact-map" id="map">
-                            <div class="contact-content">
-                                <div class="contact-map-render"></div>
-                            </div>
+    <main class="main">
+        <link rel="stylesheet" href="/dist/css/theme/pages/contact.min.css">
+        <div class="full-height contact tl-d-b cf va-t">
+            <div class="pc-col-19 -pc-col-1">
+                <h1 class="main--bigtitle">Contato</h1>
+            </div>
+            <div class="pc-col-20 col-lr cf contact--main">
+                <div class="pc-col-9 tl-col-20 col-lr">
+                    <div class="contact--map">
+                        <div class="contact--map-skew">
+                            <iframe class="contact--map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1v7PhDMv0g1uFkWDRlQ4GoyqitNQ&z=13&ll=-23.560510602615777,-46.63048429094981" width="100%" height="800" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="pc-col-8 -pc-col-2 t-col-20 ">
-                        <div class="contact-form">
-                            <div class="contact-social t-ta-c">
-                                <a data-tipfy="Telefone" class="fa fa-phone" data-unikode="dGVsOigxMSk5NTIyMS04ODE3" data-unikode-attr="href"></a>
-                                <a data-tipfy="E-mail" class="fa fa-envelope-o" data-unikode="bWFpbHRvOmZ5Z3Vhcm5pZXJpQGdtYWlsLmNvbQ==" data-unikode-attr="href"></a>
-                                <a data-tipfy="Facebook" class="fa fa-facebook" target="_blank" href="https://fb.com/figuarnieri"></a>
-                            </div>
-                            <form action="" method="post">
-                                <label class="contact-label d-b" for="Nome">Nome</label>
-                                <input class="_text" type="text" name="Nome" id="Nome">
-                                <label class="contact-label d-b" for="Email">E-mail</label>
-                                <input class="_text" type="email" name="Email" id="Email">
-                                <label class="contact-label d-b" for="Assunto">Assunto</label>
-                                <input class="_text" type="text" name="Assunto" id="Assunto">
-                                <label class="contact-label d-b" for="Mensagem">Mensagem</label>
-                                <input class="_text" type="text" name="Mensagem" id="Mensagem">
-                                <div class="ta-r">
-                                    <button type="submit" class="_submit">enviar</button>
-                                </div>
-                            </form>
-                        </div>
+                </div>
+                <div class="pc-col-8 -pc-col-1 tl-col-20">
+                    <div class="contact--network tl-ta-c">
+                        <a title="+55 11 95221-8817" href="tel:+5511952218817" class="fa fa-phone"></a>
+                        <a title="E-mail" href="mailto:fyguarnieri@gmail.com" class="fa fa-envelope-o"></a>
+                        <a title="Facebook" target="_blank" href="https://fb.com/figuarnieri" class="fa fa-facebook"></a>
                     </div>
+                    <form class="contact--form" action="" method="post">
+                        <label class="contact--label d-b" for="Nome">Nome</label>
+                        <input class="contact--input" type="text" name="Nome" id="Nome" required="">
+                        <label class="contact--label d-b" for="Email">E-mail</label>
+                        <input class="contact--input" type="email" name="Email" id="Email" required="">
+                        <label class="contact--label d-b" for="Assunto">Assunto</label>
+                        <input class="contact--input" type="text" name="Assunto" id="Assunto">
+                        <label class="contact--label d-b" for="Mensagem">Mensagem</label>
+                        <textarea class="contact--input" name="Mensagem" id="Mensagem" required=""></textarea>
+                        <div class="ta-r">
+                            <button type="submit" class="contact--submit">enviar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </main>
     
-    <footer id="down" class="ta-r" role="contentinfo">
-        <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
+    <footer class="footer ta-r">
+        <a class="link" target="_blank" href="https://twitter.com/figuarnieri" aria-label="">@figuarnieri</a> /// copyright <span data-date>2017</span>
     </footer>
 
-    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

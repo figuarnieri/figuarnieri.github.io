@@ -54,10 +54,24 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <script src="assets/js/all.js" async="async"></script>
+    <link rel="stylesheet" href="dist/css/lib/reset.min.css">
+    <link rel="stylesheet" href="dist/css/lib/default.min.css">
+    <link rel="stylesheet" href="dist/css/lib/grid.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.tipfy.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.validity.min.css">
+    <link rel="stylesheet" href="dist/css/theme/style.min.css">
+    <link rel="stylesheet" href="dist/css/theme/header.min.css">
+    <link rel="stylesheet" href="dist/css/theme/footer.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/keyframes.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/responsive.min.css">
+    <script src="/dist/js/ibaro.tipfy.min.js" async=""></script>
+    <script src="/dist/js/ibaro.validity.min.js" async=""></script>
+    <script src="/dist/js/plugin.tipfy.min.js" async=""></script>
+    <script src="/dist/js/plugin.validity.min.js" async=""></script>
+    <script src="/dist/js/main.min.js" async=""></script>
 
-    <title>Filipe Guarnieri - Front End / @figuarnieri</title>
+    <title>Sobre Mim (Profissional) - Filipe Guarnieri</title>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -76,75 +90,80 @@
         }
     </script>
 </head>
-<body>
+<body class="boxcontent">
     <noscript class="noscript ta-c"></noscript>
-    <div class="bg-cloud"></div>
-    <div class="bg-square"></div>
-    <header id="up" role="banner">
-        <nav class="nav">
-            <button class="nav-icon d-ib" data-menu>
-                <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>
-            </button>
-            <ul class="nav-list ta-r">
-                <li class="nav-item nav-index-1">
-                    <a data-get="#main" data-get-to="#main" href="index.html" class="nav-link d-b">
-                        <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
+    <header class="header">
+        <input class="header--check" type="checkbox" id="Menu">
+        <nav class="header--nav">
+            <label for="Menu" class="header--menu">
+                <span class="header--menu-text">Menu</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <ul class="header--list">
+                <li class="header--item header--item-1">
+                    <a href="index.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-home">Home</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-2">
-                    <a data-get="#main" data-get-to="#main" href="sobre-profissional.html" class="nav-link d-b">
-                        <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
+                <li class="header--item header--item-2">
+                    <a href="sobre-profissional.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-user-o">Sobre</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-3">
-                    <a data-get="#main" data-get-to="#main" href="portfolio.html" class="nav-link d-b">
-                        <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
+                <li class="header--item header--item-3">
+                    <a href="portfolio.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-file-code-o">Portfolio</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-4">
-                    <a data-get="#main" data-get-to="#main" href="labs.html" class="nav-link d-b">
-                        <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
+                <li class="header--item header--item-4">
+                    <a href="labs.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-flask">Labs</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-5">
-                    <a data-get="#main" data-get-to="#main" href="contato.html" class="nav-link d-b">
-                        <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
+                <li class="header--item header--item-5">
+                    <a href="contato.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-envelope-o">Contato</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main" role="main">
-        <div class="full-height cf">
-            <h1 class="bigtitle pc-col-20">Sobre</h1>
-            <div class="pc-col-11 -pc-col-1">
-                <div class="main-text">
+    <main class="main about">
+        <link rel="stylesheet" href="/dist/css/theme/pages/about.min.css">
+        <div class="full-height cf va-t">
+            <div class=" -pc-col-1 pc-col-19">
+                <h1 class="main--bigtitle">Sobre</h1>
+                <h2 class="main--subtitle">Profissional</h2>
+            </div>
+            <div class="pc-col-11 -pc-col-1 t-col-20">
+                <div class="main--text">
                     <p>Comecei a desenvolvedor códigos Front End desde 2011, e desde então nunca mais deixei de acompanhar as novidades na Web e de ver novidades do mundo Front</p>
                     <p>Meu inicio foi na empresa <b>1zero1</b>, que posteriormente se tornaou a <a target="_blank" href="http://www.ibaro.com.br">Ibaro</a>.</p>
                     <p>Tive sempre uma experiência de mercado com projetos de Websites, Hotsites, Landpages, Intranets, Portais, Single Pages e Blogs.</p>
                     <p>Neste tempo que estive na Ibaro, iniciei um projeto chamado TemplatYii. Que seria um Boilerplate de Front End, na estrutura do Framework MVC de Back End Yii 2.</p>
-                    <p>Aprendi a desenvolver com tecnologias e metodologias como, HTML 5, Web Components, CSS 3, Sass, LESS, Javascript, Vanilla JS, jQuery, Vue.js, ES6, Gulp, Grunt, Wordpress</p>
+                    <p>Aprendi a desenvolver com tecnologias e metodologias como, HTML 5, Web Components, CSS 3, Sass, LESS, Vanilla JS, jQuery, Vue.js, ES6, Gulp, Grunt, Wordpress</p>
                 </div>
             </div>
             <aside class="-pc-col-1 pc-col-5 t-col-20">
-                <div class="about-aside">
-                    <div class="about-image"></div>
-                    <ul class="about-list">
-                        <li class="about-item ta-c"><a class="about-link d-b" data-get="#main" data-get-to="#main" href="sobre-profissional.html">Profissional</a></li>
-                        <li class="about-item ta-c"><a class="about-link d-b" data-get="#main" data-get-to="#main" href="sobre-pessoal.html">Pessoal</a></li>
-                        <li class="about-item ta-c"><a href="https://docs.google.com/document/export?format=pdf&id=1mSU2DS4XLoVt0ZZE3PpItBGKx52cnPOr46sc-YjqSAk&token=AC4w5VgZ02UWpm_tQBskiEjx-Vm05nQvGw%3A1496592511126" class="about-link d-b">Curriculo</a></li>
+                <div class="about--aside">
+                    <div class="about--image">
+                        <img src="dist/img/sobre-perfil.jpg" alt="Imagem de Perfil de Filipe Guarnieri" width="300" height="563">
+                    </div>
+                    <ul class="about--list">
+                        <li class="about--item about--item-active ta-c"><a class="about--link d-b" href="sobre-profissional.html">Profissional</a></li>
+                        <li class="about--item ta-c"><a class="about--link d-b" href="sobre-pessoal.html">Pessoal</a></li>
+                        <li class="about--item ta-c"><a href="https://docs.google.com/document/export?format=pdf&id=1mSU2DS4XLoVt0ZZE3PpItBGKx52cnPOr46sc-YjqSAk&token=AC4w5VgZ02UWpm_tQBskiEjx-Vm05nQvGw%3A1496592511126" class="about--link d-b">Curriculo</a></li>
                     </ul>
                 </div>
             </aside>
         </div>
     </main>
 
-    <footer id="down" class="ta-r" role="contentinfo">
-        <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
+    <footer class="footer ta-r">
+        <a class="link" target="_blank" href="https://twitter.com/figuarnieri" aria-label="">@figuarnieri</a> /// copyright <span data-date>2017</span>
     </footer>
 
-    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

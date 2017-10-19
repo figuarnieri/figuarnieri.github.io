@@ -54,10 +54,24 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <script src="assets/js/all.js" async="async"></script>
+    <link rel="stylesheet" href="dist/css/lib/reset.min.css">
+    <link rel="stylesheet" href="dist/css/lib/default.min.css">
+    <link rel="stylesheet" href="dist/css/lib/grid.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.tipfy.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.validity.min.css">
+    <link rel="stylesheet" href="dist/css/theme/style.min.css">
+    <link rel="stylesheet" href="dist/css/theme/header.min.css">
+    <link rel="stylesheet" href="dist/css/theme/footer.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/keyframes.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/responsive.min.css">
+    <script src="/dist/js/ibaro.tipfy.min.js" async=""></script>
+    <script src="/dist/js/ibaro.validity.min.js" async=""></script>
+    <script src="/dist/js/plugin.tipfy.min.js" async=""></script>
+    <script src="/dist/js/plugin.validity.min.js" async=""></script>
+    <script src="/dist/js/main.min.js" async=""></script>
 
-    <title>Filipe Guarnieri - Front End / @figuarnieri</title>
+    <title>Portfolio - Filipe Guarnieri</title>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -76,75 +90,193 @@
         }
     </script>
 </head>
-<body>
+<body class="boxcontent">
     <noscript class="noscript ta-c"></noscript>
-    <div class="bg-cloud"></div>
-    <div class="bg-square"></div>
-    <header id="up" role="banner">
-        <nav class="nav">
-            <button class="nav-icon d-ib" data-menu>
-                <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>
-            </button>
-            <ul class="nav-list ta-r">
-                <li class="nav-item nav-index-1">
-                    <a data-get="#main" data-get-to="#main" href="index.html" class="nav-link d-b">
-                        <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
+    <header class="header">
+        <input class="header--check" type="checkbox" id="Menu">
+        <nav class="header--nav">
+            <label for="Menu" class="header--menu">
+                <span class="header--menu-text">Menu</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <ul class="header--list">
+                <li class="header--item header--item-1">
+                    <a href="index.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-home">Home</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-2">
-                    <a data-get="#main" data-get-to="#main" href="sobre-profissional.html" class="nav-link d-b">
-                        <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
+                <li class="header--item header--item-2">
+                    <a href="sobre-profissional.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-user-o">Sobre</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-3">
-                    <a data-get="#main" data-get-to="#main" href="portfolio.html" class="nav-link d-b">
-                        <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
+                <li class="header--item header--item-3">
+                    <a href="portfolio.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-file-code-o">Portfolio</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-4">
-                    <a data-get="#main" data-get-to="#main" href="labs.html" class="nav-link d-b">
-                        <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
+                <li class="header--item header--item-4">
+                    <a href="labs.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-flask">Labs</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-5">
-                    <a data-get="#main" data-get-to="#main" href="contato.html" class="nav-link d-b">
-                        <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
+                <li class="header--item header--item-5">
+                    <a href="contato.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-envelope-o">Contato</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main" role="main">
-        <div class="full-height cf">
-            <div class="pc-col-11">
-                <h1 class="bigtitle">Portfolio</h1>
+    <main class="main">
+        <link rel="stylesheet" href="/dist/css/theme/pages/portfolio.min.css">
+        <div class="full-height portfolio cf va-t">
+            <div class="pc-col-19 -pc-col-1">
+                <h1 class="main--bigtitle">Portfolio</h1>
             </div>
-            <div class="pc-col-20 t-col-20 col-lr">
-                <div class="portfolio cf" id="portfolio">
-                    <div class="pc-col-5 t-col-20 col-lr" v-for="(item, index) in items">
-                        <div data-portfolio class="portfolio-item" v-bind:style="'background-image: url(assets/img/'+item.img+');'">
-                            <div class="portfolio-hidden d-n">
-                                <div class="portfolio-main">
-                                    <div class="pc-d-n ta-r">
-                                        <button data-portfolio-close class="portfolio-close fa fa-times">fechar</button>
-                                    </div>
-                                    <img class="portfolio-img" v-bind:src="'assets/img/'+item.img" alt="">
-                                    <h2 class="portfolio-title">{{item.title}}</h2>
-                                    <p class="portfolio-text">{{item.descript}}</p>
-                                </div>
-                            </div>
+            <div class="pc-col-20 cf portfolio--main">
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/net-combo.jpg" width="400" height="400" alt="Imagem de previsualização do site Net Combo">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Net Combo</h2>
+                            <p class="portfolio--text">Trabalhei para tornar relevante os testes A-B, Design Thinking, UX (User Experience) e principalmente em SEO nos mínimos detalhes da Landing Page, o que resultou no aumento de visitações e vendas de uma mídia que já possuía altos níveis de excelência e conversão.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/blacktag.jpg" width="400" height="400" alt="Imagem de previsualização do site BlackTag">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">BlackTag</h2>
+                            <p class="portfolio--text">Tive um importante trabalho de direcionamento de ideias, criação e execução para esse projeto, de alta complexidade, se tornar viável e totalmente integrado aos eventos do Facebook.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/csn.jpg" width="400" height="400" alt="Imagem de previsualização do site CSN">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">CSN</h2>
+                            <p class="portfolio--text">Desenvolvi uma refatoração de complexo sistema de interligação dados, digitalizando todo processo do sistema de intranet da empresa, fazendo a CSN usufruir de um sistema mais moderno, seguro e amigável para os vendedores com diferentes níveis de conhecimento web.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/freeco.jpg" width="400" height="400" alt="Imagem de previsualização do site FreeCô">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">FreeCô</h2>
+                            <p class="portfolio--text">Desenvolvi em um tempo recorde, um e-commerce rápido e robusto o suficiente para atender aos resultados que a parte de Marketing Digital precisaria para o lançamento da nova loja virtual.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/carrefour.jpg" width="400" height="400" alt="Imagem de previsualização do site Carrefour Tour 40 Anos">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Carrefour Tour 40 Anos</h2>
+                            <p class="portfolio--text">Através de uma plataforma que desenvolvidi a parte do Front, O Carrefour pode ter total integração com os dispositivos mobiles para contar, em tempo real, a viagem através de todas lojas do Carrefour no pais.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/eupaciente.jpg" width="400" height="400" alt="Imagem de previsualização do site Eu Paciente">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Eu Paciente</h2>
+                            <p class="portfolio--text">Criei a parte de Front End e acompanheio o conceito e comportamentos dessa rede social. Foram quase 2 anos de produção evolvendo várias áreas de desenvolvimento, desde sua fase inicial com a criação de sua identidade visual até os detalhes mais estratégicos de suas funcionalidades e serviços prestados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/alergoshop.jpg" width="400" height="400" alt="Imagem de previsualização do site AlergoShop">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">AlergoShop</h2>
+                            <p class="portfolio--text">Depois de um estudo feito com pessoas alérgicas de como elas procuram produtos e quais suas dificuldades na finalização da compra, foi desenvolvido um sistema que cruzasse todos os dados do usuário com compostos dos produtos, e informasse ao mesmo qual produto poderia ou não lhe causar alergia, antes mesmo de finalizar a compra.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/academia-de-jogos.jpg" width="400" height="400" alt="Imagem de previsualização do site Academia de Jogos">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Academia de Jogos</h2>
+                            <p class="portfolio--text">Após diversas tentativas frustradas de colocar em pratica sua loja virtual com outras produtoras web, a Academia de Jogos procurou a Ibaro (empresa onde trabalho), para melhorar o UX do site a atualizar a identidade visual do site.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/toolbox.jpg" width="400" height="400" alt="Imagem de previsualização do site ToolBox Trade Marketing">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">ToolBox Trade Marketing</h2>
+                            <p class="portfolio--text">Ao invés de seguir o formato convencional em dividir o site do Grupo em dois sites internos, inovei ao apresentar uma navegação de dois sites gêmeos expostos simultaneamente no mesmo front de forma original e totalmente única.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/ari-guarnieri.jpg" width="400" height="400" alt="Imagem de previsualização do site Psicólogo Ari Guarnieri">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Psicólogo Ari Guarnieri</h2>
+                            <p class="portfolio--text">Desenvolvido em um plataforma Wordpress, HTML5, e CSS3, onde o cliente tem facilidade em alterar todas as informações do site através do Administrador do site</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/eduardo-muller.jpg" width="400" height="400" alt="Imagem de previsualização do site Eduardo Muller Barbershop">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Eduardo Muller Barbershop</h2>
+                            <p class="portfolio--text">Trabalhei na elaboração e concepção do layout e a também no Front End, do barbeiro Eduardo Muller. Utilizei as tecnologias Wordpress, jQuery, HTML5, CSS3 e tornando ele um site Responsivo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio--box pc-col-5 tl-col-10 ml-col-20 col-lr">
+                    <div class="portfolio--item cf">
+                        <div class="portfolio--thumb">
+                            <img src="dist/img/ago-de-souza.jpg" width="400" height="400" alt="Imagem de previsualização do site Ago de Souza">
+                        </div>
+                        <div class="portfolio--info">
+                            <h2 class="portfolio--title">Ago de Souza</h2>
+                            <p class="portfolio--text">Fiz o layout e a parte de Front End do cantor de RAP Ago de Souza, utilizando Wordpress, jQuery, HTML5, CSS3, JS Hisory API, e tornando ele um site Responsivo</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer id="down" class="ta-r" role="contentinfo">
-        <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
+
+    <footer class="footer ta-r">
+        <a class="link" target="_blank" href="https://twitter.com/figuarnieri" aria-label="">@figuarnieri</a> /// copyright <span data-date>2017</span>
     </footer>
 
-    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

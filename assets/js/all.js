@@ -13233,11 +13233,19 @@ $(function(){
     });
 })
 
+;
+function getTag(e) {
+    document.querySelectorAll(e).forEach((tag, index) => {
+        return index;
+    });
+};
+console.log(getTag('div'));
+(function(doc){
+    doc.querySelector('[data-menu]').addEventListener('click', (e) =>{
+        doc.getElementsByClassName('nav')[0].classList.toggle('nav-active');
+    });
+})(document);
 
-$('[data-menu]').on('click', (e) => {
-    var t = $(e.target);
-    $('.nav').toggleClass('nav-active');
-});
 $('[data-unikode]').each((i, tag) => {
     var t = $(tag)
     , url = atob(t.data('unikode'))

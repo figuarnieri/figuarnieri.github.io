@@ -1,16 +1,16 @@
-@import "io/_compass.scss";
-@import "io/reset.scss";
-@import "io/icons.scss";
-@import "io/default.scss";
-
-@import "out/_tipfy.scss";
-@import "out/_validationEngine.jquery.scss";
+@import "lib/_compass.scss";
+@import "lib/reset.scss";
+@import "lib/default.scss";
+@import "lib/grid.scss";
+@import "lib/ibaro.tipfy.scss";
+@import "lib/ibaro.icons.scss";
+@import "lib/ibaro.validity.scss";
 
 @import "theme/header.scss";
 @import "theme/footer.scss";
-@import "theme/home.scss";
-@import "theme/page.scss";
 @import "theme/style.scss";
+
+//@import "theme/pages/__documentation__.scss";
 
 @import "theme/extra/webfonts.scss";
 @import "theme/extra/keyframes.scss";

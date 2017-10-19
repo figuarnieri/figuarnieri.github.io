@@ -54,8 +54,22 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <script src="assets/js/all.js" async="async"></script>
+    <link rel="stylesheet" href="dist/css/lib/reset.min.css">
+    <link rel="stylesheet" href="dist/css/lib/default.min.css">
+    <link rel="stylesheet" href="dist/css/lib/grid.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.tipfy.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.validity.min.css">
+    <link rel="stylesheet" href="dist/css/theme/style.min.css">
+    <link rel="stylesheet" href="dist/css/theme/header.min.css">
+    <link rel="stylesheet" href="dist/css/theme/footer.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/keyframes.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/responsive.min.css">
+    <script src="/dist/js/ibaro.tipfy.min.js" async=""></script>
+    <script src="/dist/js/ibaro.validity.min.js" async=""></script>
+    <script src="/dist/js/plugin.tipfy.min.js" async=""></script>
+    <script src="/dist/js/plugin.validity.min.js" async=""></script>
+    <script src="/dist/js/main.min.js" async=""></script>
 
     <title>Filipe Guarnieri - Front End / @figuarnieri</title>
     <script type="application/ld+json">
@@ -77,64 +91,65 @@
     </script>
 </head>
 <body>
+    <div class="loading"></div>
     <noscript class="noscript ta-c"></noscript>
-    <div class="bg-cloud"></div>
-    <div class="bg-square"></div>
-    <header id="up" role="banner">
-        <nav class="nav">
-            <button class="nav-icon d-ib" data-menu>
-                <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>
-            </button>
-            <ul class="nav-list ta-r">
-                <li class="nav-item nav-index-1">
-                    <a data-get="#main" data-get-to="#main" href="index.html" class="nav-link d-b">
-                        <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
+    <header class="header">
+        <input class="header--check" type="checkbox" id="Menu">
+        <nav class="header--nav">
+            <label for="Menu" class="header--menu">
+                <span class="header--menu-text">Menu</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <ul class="header--list">
+                <li class="header--item header--item-1">
+                    <a href="index.html" class="header--link d-b" data-go data-go-after="squareHome();">
+                        <span class="header--link-text d-b fa fa-home">Home</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-2">
-                    <a data-get="#main" data-get-to="#main" href="sobre-profissional.html" class="nav-link d-b">
-                        <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
+                <li class="header--item header--item-2">
+                    <a href="sobre-profissional.html" class="header--link d-b" data-go data-go-after="squarePages();">
+                        <span class="header--link-text d-b fa fa-user-o">Sobre</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-3">
-                    <a data-get="#main" data-get-to="#main" href="portfolio.html" class="nav-link d-b">
-                        <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
+                <li class="header--item header--item-3">
+                    <a href="portfolio.html" class="header--link d-b" data-go data-go-after="squarePages();">
+                        <span class="header--link-text d-b fa fa-file-code-o">Portfolio</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-4">
-                    <a data-get="#main" data-get-to="#main" href="labs.html" class="nav-link d-b">
-                        <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
+                <li class="header--item header--item-4">
+                    <a href="labs.html" class="header--link d-b" data-go data-go-after="squarePages();">
+                        <span class="header--link-text d-b fa fa-flask">Labs</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-5">
-                    <a data-get="#main" data-get-to="#main" href="contato.html" class="nav-link d-b">
-                        <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
+                <li class="header--item header--item-5">
+                    <a href="contato.html" class="header--link d-b" data-go data-go-after="squarePages();">
+                        <span class="header--link-text d-b fa fa-envelope-o">Contato</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main" role="main">
-        <div class="full-height cf va-m">
-            <div class="pc-col-19 ta-r">
-                <h1 class="home-bigtitle">Filipe Guarnieri</h1>
-                <h2 class="home-title">Front End</h2>
-                <h3 class="home-subtitle d-ib">senior</h3>
-                <ul class="social ta-r">
-                    <li class="social-item d-ib"><a data-tipfy="Email" data-unikode="bWFpbHRvOmZ5Z3Vhcm5pZXJpQGdtYWlsLmNvbQ==" data-unikode-attr="href" class="social-link ta-c d-b fa fa-envelope-o"></a></li>
-                    <li class="social-item d-ib"><a data-tipfy="Github" href="https://github.com/figuarnieri/" target="_blank" class="social-link ta-c d-b fa fa-github-alt"></a></li>
-                    <li class="social-item d-ib"><a data-tipfy="Twitter" href="https://twitter.com/figuarnieri" target="_blank" class="social-link ta-c d-b fa fa-twitter"></a></li>
-                </ul>
+    <main class="main">
+        <link rel="stylesheet" href="/dist/css/theme/pages/home.min.css">
+        <div class="full-height home cf va-m">
+            <div class="pc-col-19 tl-col-19 ta-r">
+                <h1 class="home--bigtitle">Filipe Guarnieri</h1>
+                <h2 class="home--title">Front End</h2>
+                <h3 class="home--subtitle d-ib" aria-label="Developer Sênior">senior</h3>
+                <div class="ta-r">
+                    <a title="Twitter" href="https://twitter.com/figuarnieri" target="_blank" class="home--social ta-c d-ib fa fa-twitter"></a>
+                    <a title="Github" href="https://github.com/figuarnieri/" target="_blank" class="home--social ta-c d-ib fa fa-github-alt"></a>
+                    <a title="E-mail" href="mailto:fyguarnieri@gmail.com" class="home--social ta-c d-ib fa fa-envelope-o"></a>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer id="down" class="ta-r" role="contentinfo">
-        <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
+    <footer class="footer ta-r">
+        <a class="link" target="_blank" href="https://twitter.com/figuarnieri" aria-label="">@figuarnieri</a> /// copyright <span data-date>2017</span>
     </footer>
 
-    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

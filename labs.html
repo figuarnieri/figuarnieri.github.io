@@ -54,10 +54,24 @@
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik+Mono+One">
-    <link rel="stylesheet" href="assets/css/all.css">
-    <script src="assets/js/all.js" async="async"></script>
+    <link rel="stylesheet" href="dist/css/lib/reset.min.css">
+    <link rel="stylesheet" href="dist/css/lib/default.min.css">
+    <link rel="stylesheet" href="dist/css/lib/grid.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.tipfy.min.css">
+    <link rel="stylesheet" href="dist/css/lib/ibaro.validity.min.css">
+    <link rel="stylesheet" href="dist/css/theme/style.min.css">
+    <link rel="stylesheet" href="dist/css/theme/header.min.css">
+    <link rel="stylesheet" href="dist/css/theme/footer.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/keyframes.min.css">
+    <link rel="stylesheet" href="dist/css/theme/extra/responsive.min.css">
+    <script src="/dist/js/ibaro.tipfy.min.js" async=""></script>
+    <script src="/dist/js/ibaro.validity.min.js" async=""></script>
+    <script src="/dist/js/plugin.tipfy.min.js" async=""></script>
+    <script src="/dist/js/plugin.validity.min.js" async=""></script>
+    <script src="/dist/js/main.min.js" async=""></script>
 
-    <title>Filipe Guarnieri - Front End / @figuarnieri</title>
+    <title>Portfolio - Filipe Guarnieri</title>
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -76,106 +90,97 @@
         }
     </script>
 </head>
-<body>
+<body class="boxcontent">
+    <div class="loading"></div>
     <noscript class="noscript ta-c"></noscript>
-    <div class="bg-cloud"></div>
-    <div class="bg-square"></div>
-    <header id="up" role="banner">
-        <nav class="nav">
-            <button class="nav-icon d-ib" data-menu>
-                <span class="nav-text">Menu <i class="fa fa-bars va-m d-ib"></i></span>
-            </button>
-            <ul class="nav-list ta-r">
-                <li class="nav-item nav-index-1">
-                    <a data-get="#main" data-get-to="#main" href="index.html" class="nav-link d-b">
-                        <span class="nav-text">Home <i class="fa fa-home va-m"></i></span>
+    <header class="header">
+        <input class="header--check" type="checkbox" id="Menu">
+        <nav class="header--nav">
+            <label for="Menu" class="header--menu">
+                <span class="header--menu-text">Menu</span>
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <ul class="header--list">
+                <li class="header--item header--item-1">
+                    <a href="index.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-home">Home</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-2">
-                    <a data-get="#main" data-get-to="#main" href="sobre-profissional.html" class="nav-link d-b">
-                        <span class="nav-text">Sobre <i class="fa fa-user-o va-m"></i></span>
+                <li class="header--item header--item-2">
+                    <a href="sobre-profissional.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-user-o">Sobre</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-3">
-                    <a data-get="#main" data-get-to="#main" href="portfolio.html" class="nav-link d-b">
-                        <span class="nav-text">Portfolio <i class="fa fa-file-code-o va-m"></i></span>
+                <li class="header--item header--item-3">
+                    <a href="portfolio.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-file-code-o">Portfolio</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-4">
-                    <a data-get="#main" data-get-to="#main" href="labs.html" class="nav-link d-b">
-                        <span class="nav-text">Labs <i class="fa fa-flask va-m"></i></span>
+                <li class="header--item header--item-4">
+                    <a href="labs.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-flask">Labs</span>
                     </a>
                 </li>
-                <li class="nav-item nav-index-5">
-                    <a data-get="#main" data-get-to="#main" href="contato.html" class="nav-link d-b">
-                        <span class="nav-text">Contato <i class="fa fa-envelope-o va-m"></i></span>
+                <li class="header--item header--item-5">
+                    <a href="contato.html" class="header--link d-b">
+                        <span class="header--link-text d-b fa fa-envelope-o">Contato</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="main" role="main">
-        <div class="full-height cf">
-            <div class="pc-col-20 t-col-20">
-                <h1 class="bigtitle">Labs</h1>
-                <div class="cf va-t">
-                    <div class="pc-col-7 -pc-col-1 col-lr t-d-n">
-                        <div class="labs-images">
-                            <div class="svg-wrap">
-                                <svg class="svg-ball svg-ball-1" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 25.8 25.8">
-                                    <circle class="svg-ball-red" cx="12.9" cy="12.9" r="12.9"/>
-                                    <path class="svg-ball-white" d="M24,9c0,0-0.4,22.5-19.8,12C4.1,21,20.2,26.2,24,9z"/>
-                                </svg>
-                                <svg class="svg-ball svg-ball-2" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 25.8 25.8">
-                                    <circle class="svg-ball-red" cx="12.9" cy="12.9" r="12.9"/>
-                                    <path class="svg-ball-white" d="M24,9c0,0-0.4,22.5-19.8,12C4.1,21,20.2,26.2,24,9z"/>
-                                </svg>
-                                <svg class="svg-ball svg-ball-3" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 25.8 25.8">
-                                    <circle class="svg-ball-red" cx="12.9" cy="12.9" r="12.9"/>
-                                    <path class="svg-ball-white" d="M24,9c0,0-0.4,22.5-19.8,12C4.1,21,20.2,26.2,24,9z"/>
-                                </svg>
-                                <svg class="svg-ball svg-ball-4" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 25.8 25.8">
-                                    <circle class="svg-ball-red" cx="12.9" cy="12.9" r="12.9"/>
-                                    <path class="svg-ball-white" d="M24,9c0,0-0.4,22.5-19.8,12C4.1,21,20.2,26.2,24,9z"/>
-                                </svg>
-                                <svg class="svg-ball svg-ball-5" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 25.8 25.8">
-                                    <circle class="svg-ball-red" cx="12.9" cy="12.9" r="12.9"/>
-                                    <path class="svg-ball-white" d="M24,9c0,0-0.4,22.5-19.8,12C4.1,21,20.2,26.2,24,9z"/>
-                                </svg>
-                                <svg class="svg-recipient" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 120.5 138.3">
-                                    <path class="st0" d="M27,80.3L8.7,107.7c-7.8,12-6.8,28,14.5,26.3c4.4-0.4,70.6,0,70.6,0c27.8,2.4,24.5-15.6,17.5-24.6L92.5,80.6L27,80.3z"/>
-                                    <path class="st2" d="M36.5,2.3c7.5,7.4,6.4,13,6.5,21.9l0.3,28.3L6.5,107.5c-8.9,14.8-2.9,29.3,11.7,28.4l84.4,0.1c15.8-0.1,21.5-14.6,9.3-30L77,52.6l-0.7-28.3c-0.1-8.9-1.3-14.5,6.1-22L36.5,2.3z"/>
-                                    <path class="st3" d="M21,129.9c-8.1,0.8-14.5-4.9-9.3-14.8l37.2-60.2l-0.3-40c0-2.7-0.3-5.5-2.5-8.2c4.7,2.2,8.9,4.6,9.3,8.2l0.5,42.2c0.1,9.5-14.6,29-21,40.5C26.2,113.1,14.6,124.6,21,129.9z"/>
-                                    <path class="st3" d="M82.3,0L36.4,0c-0.9,0-1.8,0.5-2.1,1.4c-0.4,0.9-0.1,1.9,0.5,2.5c3.5,3.5,4.8,6.2,5.4,9.2c0.6,3,0.4,6.6,0.4,11.1l0.3,27.6L4.6,106.2c0,0-0.1,0.1-0.1,0.1c-4.7,7.9-5.7,15.9-3.1,22.2c2.5,6.2,8.8,10.2,16.7,9.8c0.1,0,0.1,0,0.1,0l84.1,0.1c8.6,0,15.1-4.3,17.3-10.8c2.2-6.5,0.2-14.7-6.1-22.7l-0.1-0.2L79.1,51.9l-0.6-27.6c0-0.1,0-0.2,0-0.4c0,0,0,0,0-0.1c-0.1-4.3-0.3-7.8,0.2-10.7c0.5-3,1.8-5.7,5.2-9.3c0.7-0.7,0.8-1.7,0.5-2.5C84,0.5,83.2,0,82.3,0z M77.6,4.6c-1.8,2.6-3,5.2-3.5,7.8c-0.5,3-0.4,6-0.3,9.3H63.6c-0.1,0-0.2,0-0.3,0c-1.3,0.1-2.2,1.1-2.2,2.4c0.1,1.3,1.1,2.3,2.4,2.2h10.3l0.4,17.6H63.6c-0.1,0-0.2,0-0.3,0c-1.3,0.1-2.2,1.1-2.2,2.4c0.1,1.3,1.1,2.3,2.4,2.2h10.9l0.1,4.3c0,0.4,0.1,0.8,0.4,1.2l8.2,12.6H72.1c-0.1,0-0.2,0-0.3,0c-1.3,0.1-2.2,1.1-2.2,2.4c0.1,1.3,1.1,2.3,2.4,2.2h12.6c0.5,0,0.9-0.1,1.3-0.4l9,13.9H84.3c-0.1,0-0.1,0-0.2,0c-1.3,0.1-2.3,1.1-2.2,2.4c0.1,1.3,1.1,2.3,2.4,2.2h12.6c0.3,0,0.6-0.1,0.9-0.2l8.8,13.4h-10c-0.1,0-0.1,0-0.2,0c-1.3,0.1-2.3,1.1-2.2,2.4c0.1,1.3,1.1,2.3,2.4,2.2h12.6c0.1,0,0.2,0,0.4,0l0.2,0.3c0,0.1,0.1,0.1,0.1,0.2c5.8,7.3,7,13.9,5.5,18.5c-1.6,4.6-5.8,7.7-13,7.7l-84.2-0.1c0,0-0.1,0-0.1,0c-6.5,0.4-10.5-2.4-12.4-6.9c-1.9-4.5-1.3-11.1,2.8-18L45,53.8c0.3-0.4,0.4-0.8,0.4-1.3l-0.3-28.3c0-4.4,0.2-8.1-0.5-12c-0.5-2.5-1.8-5.1-3.6-7.6L77.6,4.6z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col-11 t-col-20">
-                        <ul class="accordion" id="labs">
-                            <li class="labs-item">
-                                <h2 data-open-next class="labs-title fa fa-minus">Github</h2>
-                                <div class="labs-content">
-                                    <div class="labs-text">
-                                        <ul class="labs-list">
-                                            <li class="labs-list-text" v-for="item in items"><a class="labs-link" target="_blank" v-bind:href="item.link">{{item.title}}</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <main class="main">
+        <link rel="stylesheet" href="/dist/css/theme/pages/labs.min.css">
+        <div class="full-height labs cf va-t tl-d-b">
+            <div class="pc-col-19 -pc-col-1 tl-col-20">
+                <h1 class="main--bigtitle">Labs</h1>
+            </div>
+            <div class="pc-col-18 -pc-col-1 tl-col-20 cf labs--main">
+                <aside class="pc-col-7 tl-col-7 ml-col-20" aria-hidden="true">
+                    <svg class="labs--svg d-b" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.6 304.5">
+                        <path class="labs--svg-color" d="M108.9,5c0.9,0,1.8,0.1,2.4,0.2c0.2,0,0.4,0,0.6,0c2.8,0,3.8,1.4,4.1,2.2c1,2.3-0.8,5.5-5.6,10.4v58.7 l52.8,90.6c0.5,0.7,3.4,5.1,3.4,12c0,7.4-6.8,12.7-16.1,12.7H21.1C11.8,191.7,5,186.4,5,179c0-6.8,2.9-11.3,3.4-12l52.8-90.6V17.8 c-4.8-4.9-6.5-8.1-5.6-10.4c0.3-0.8,1.3-2.2,4.1-2.2c0.2,0,0.4,0,0.6,0C60.9,5.1,61.8,5,62.7,5c1.5,0,3,0.2,3.4,0.3h39.4 C105.9,5.2,107.4,5,108.9,5 M108.9,0c-1.5,0-3,0.1-3.7,0.3H66.4C65.7,0.1,64.2,0,62.7,0c-1,0-1.9,0.1-2.8,0.2c-0.1,0-0.2,0-0.2,0 c-4.1,0-7.4,2-8.7,5.3c-2.1,5,1.2,10,5.2,14.3v55.4l-52,89.3C3,166.1,0,171.3,0,179c0,10.3,8.9,17.7,21.1,17.7h129.4 c12.2,0,21.1-7.4,21.1-17.7c0-7.8-3.2-13.2-4.1-14.6l-52-89.3V19.8c4-4.3,7.3-9.3,5.2-14.3c-1.4-3.3-4.6-5.3-8.7-5.3 c-0.1,0-0.2,0-0.2,0C110.8,0.1,109.9,0,108.9,0L108.9,0z"/>
+                        <path class="labs--svg-color">
+                            <animate attributeName="d" dur="7s" repeatCount="indefinite" values="M51.8,111.7l-32.6,54.1c0,0-3.5,6.6-1.9,11.4c1.7,4.8,2.8,7.9,17.7,7.9c15,0,107.3,0,107.3,0s9.8,0.3,11.7-7.5 c1.9-7.8-1.1-11.5-7-20.8c-5.9-9.3-25.4-41.2-25.4-41.2s-8.2,4.6-15.9,4.5c-7.8-0.1-19.9,1.9-26.9-0.5 C71.9,117.3,54.6,108.5,51.8,111.7z; M41.1,129.5l-21.8,36.3c0,0-3.5,6.6-1.9,11.4c1.7,4.8,2.8,7.9,17.7,7.9c15,0,107.3,0,107.3,0s9.8,0.3,11.7-7.5 c1.9-7.8-1.1-11.5-7-20.8c-5.9-9.3-15.1-24.2-15.1-24.2s-17-15.8-37.2-7.6c-7.2,2.9-16.6,14.5-24,14.5 C51.8,139.6,43.9,126.2,41.1,129.5z; M45.3,123.4l-26,42.4c0,0-3.5,6.6-1.9,11.4c1.7,4.8,2.8,7.9,17.7,7.9c15,0,107.3,0,107.3,0s9.8,0.3,11.7-7.5 c1.9-7.8-1.1-11.5-7-20.8c-5.9-9.3-20.5-33.4-20.5-33.4s-5,21.4-31.3,19.7c-15-1-17.9-9.6-25.7-16.7 C62.6,120.1,48,120.1,45.3,123.4z; M51.8,111.7l-32.6,54.1c0,0-3.5,6.6-1.9,11.4c1.7,4.8,2.8,7.9,17.7,7.9c15,0,107.3,0,107.3,0s9.8,0.3,11.7-7.5 c1.9-7.8-1.1-11.5-7-20.8c-5.9-9.3-25.4-41.2-25.4-41.2s-8.2,4.6-15.9,4.5c-7.8-0.1-19.9,1.9-26.9-0.5 C71.9,117.3,54.6,108.5,51.8,111.7z;" />
+                        </path>
+                        <g class="labs--bubble labs--bubble-1">
+                            <path class="labs--svg-color" d="M93,86.7c6,0,10.8,4.9,10.8,10.8c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8C82.2,91.6,87.1,86.7,93,86.7 M93,85.7c-6.5,0-11.8,5.3-11.8,11.8c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8C104.9,91,99.6,85.7,93,85.7L93,85.7z"/>
+                            <path class="labs--svg-color" d="M100.6,98c-0.2,0-0.4-0.2-0.4-0.4c0-4-3.2-7.2-7.2-7.2c-0.2,0-0.4-0.2-0.4-0.4c0-0.2,0.2-0.4,0.4-0.4 c4.4,0,8,3.6,8,8C101,97.8,100.9,98,100.6,98z"/>
+                        </g>
+                        <g class="labs--bubble labs--bubble-2">
+                            <path class="labs--svg-color" d="M93,86.7c6,0,10.8,4.9,10.8,10.8c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8C82.2,91.6,87.1,86.7,93,86.7 M93,85.7c-6.5,0-11.8,5.3-11.8,11.8c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8C104.9,91,99.6,85.7,93,85.7L93,85.7z"/>
+                            <path class="labs--svg-color" d="M100.6,98c-0.2,0-0.4-0.2-0.4-0.4c0-4-3.2-7.2-7.2-7.2c-0.2,0-0.4-0.2-0.4-0.4c0-0.2,0.2-0.4,0.4-0.4 c4.4,0,8,3.6,8,8C101,97.8,100.9,98,100.6,98z"/>
+                        </g>
+                        <g class="labs--bubble labs--bubble-3">
+                            <path class="labs--svg-color" d="M93,86.7c6,0,10.8,4.9,10.8,10.8c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8C82.2,91.6,87.1,86.7,93,86.7 M93,85.7c-6.5,0-11.8,5.3-11.8,11.8c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8C104.9,91,99.6,85.7,93,85.7L93,85.7z"/>
+                            <path class="labs--svg-color" d="M100.6,98c-0.2,0-0.4-0.2-0.4-0.4c0-4-3.2-7.2-7.2-7.2c-0.2,0-0.4-0.2-0.4-0.4c0-0.2,0.2-0.4,0.4-0.4 c4.4,0,8,3.6,8,8C101,97.8,100.9,98,100.6,98z"/>
+                        </g>
+                        <g class="labs--bubble labs--bubble-4">
+                            <path class="labs--svg-color" d="M93,86.7c6,0,10.8,4.9,10.8,10.8c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8C82.2,91.6,87.1,86.7,93,86.7 M93,85.7c-6.5,0-11.8,5.3-11.8,11.8c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8C104.9,91,99.6,85.7,93,85.7L93,85.7z"/>
+                            <path class="labs--svg-color" d="M100.6,98c-0.2,0-0.4-0.2-0.4-0.4c0-4-3.2-7.2-7.2-7.2c-0.2,0-0.4-0.2-0.4-0.4c0-0.2,0.2-0.4,0.4-0.4 c4.4,0,8,3.6,8,8C101,97.8,100.9,98,100.6,98z"/>
+                        </g>
+                        <g class="labs--bubble labs--bubble-5">
+                            <path class="labs--svg-color" d="M93,86.7c6,0,10.8,4.9,10.8,10.8c0,6-4.9,10.8-10.8,10.8s-10.8-4.9-10.8-10.8C82.2,91.6,87.1,86.7,93,86.7 M93,85.7c-6.5,0-11.8,5.3-11.8,11.8c0,6.5,5.3,11.8,11.8,11.8c6.5,0,11.8-5.3,11.8-11.8C104.9,91,99.6,85.7,93,85.7L93,85.7z"/>
+                            <path class="labs--svg-color" d="M100.6,98c-0.2,0-0.4-0.2-0.4-0.4c0-4-3.2-7.2-7.2-7.2c-0.2,0-0.4-0.2-0.4-0.4c0-0.2,0.2-0.4,0.4-0.4 c4.4,0,8,3.6,8,8C101,97.8,100.9,98,100.6,98z"/>
+                        </g>
+                    </svg>
+                </aside>
+                <ul class="pc-col-12 -pc-col-1 tl-col-13 ml-col-20">
+                    <li class="labs--item"><a href="https://github.com/figuarnieri/Zo-Framework" class="d-b labs--link">Zo Framework</a></li>
+                    <li class="labs--item"><a href="https://github.com/figuarnieri/fontAstico" class="d-b labs--link">Fontastico</a></li>
+                    <li class="labs--item"><a href="https://github.com/figuarnieri/savefield" class="d-b labs--link">Savefield</a></li>
+                    <li class="labs--item"><a href="https://github.com/figuarnieri/prevalue" class="d-b labs--link">Prevalue</a></li>
+                    <li class="labs--item"><a href="./maskfy/" class="d-b labs--link">Maskfy</a></li>
+                    <li class="labs--item"><a href="https://github.com/figuarnieri/tipfy" class="d-b labs--link">Tipfy</a></li>
+                </ul>
             </div>
         </div>
     </main>
 
-    <footer id="down" class="ta-r" role="contentinfo">
-        <a class="link" target="_blank" href="https://twitter.com/figuarnieri">@figuarnieri</a> /// copyright 2017
+    <footer class="footer ta-r">
+        <a class="link" target="_blank" href="https://twitter.com/figuarnieri" aria-label="">@figuarnieri</a> /// copyright <span data-date>2017</span>
     </footer>
 
-    </script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -1,0 +1,46 @@
+@import "../../lib/mixins";
+
+.contact{
+    &--main{margin-left: -15px;margin-right: -15px;width: 100vw;}
+    &--map{
+        position: relative;
+        &:before, &:after{content: '';position: absolute;right: 0;top: 5px;bottom: 5px;transform: skewX(-7deg) translateX(-1px);transform-origin: 100% 0;}
+        &:before{z-index: -2;width: 40px;border-radius: 100%;box-shadow: 0 0 30px #666;}
+        &:after{z-index: -1;width: 90px;background-color: #fff;}
+        &-skew{
+            transform: skewX(-7deg);transform-origin: 100% 0;overflow: hidden;height: 100vh;position: relative;
+            &:before{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 1;}
+        }
+        &-iframe{transform: skewX(7deg) translate(0px, -50px);transform-origin: 100% 0;}
+    }
+    &--network{
+        font-size: 25px;margin-bottom: 30px;
+        .fa{
+            margin-right: 10px;
+            &:hover{color: #444;}
+        }
+    }
+    &--form{font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
+    &--label{
+        font-size: 16px;
+        &:hover{color: #888;}
+    }
+    &--input{
+        background-color: #fff;color: #666;padding: 10px 15px;font-size: 20px;border: none;border-bottom: 1px solid #ddd;width: 100%;margin-bottom: 15px;
+        &:focus{box-shadow: 0 0 10px #ccc;}
+    }
+    &--submit{
+        background-color: #e99;color: #fff;padding: 10px 35px 8px;font-size: 25px;border-bottom: 2px solid #e77;border-radius: 4px;text-transform: uppercase;
+        &:hover{background-color: #e88;border-bottom-color: #e55;}
+    }
+}
+@include device(tablet-landscape) {
+    .contact{
+        &--map{
+            margin-bottom: 20px;
+            &-skew{transform: none;height: 300px;}
+            &-iframe{transform: translate(0px, -180px);}
+        }
+        &--form{margin: 0 20px;}
+    }
+}

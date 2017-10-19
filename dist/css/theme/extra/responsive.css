@@ -1,0 +1,51 @@
+@media (max-width: 1024px) {
+  @keyframes bg-square {
+    from {
+      transform: rotate(45deg) translate(-960px, 190px);
+    }
+    to {
+      transform: rotate(45deg) translate(-660px, 190px);
+    }
+  }
+  body:after {
+    transform: rotate(45deg) translate(-660px, 190px);
+    opacity: .2;
+  }
+  .wrap {
+    width: 96%;
+  }
+  .main .full-height {
+    min-height: calc(100vh - 90px);
+  }
+  .main--bigtitle {
+    font-size: 3rem;
+  }
+  .main--subtitle {
+    font-size: 1.6rem;
+  }
+  .header {
+    height: 45px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap {
+    width: 90%;
+  }
+  .main--bigtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .wrap {
+    width: 90%;
+  }
+  .main--bigtitle {
+    font-size: 2rem;
+  }
+}

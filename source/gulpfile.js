@@ -1,80 +1,68 @@
-var gulp = require('gulp')
-, concat = require('gulp-concat')
-, uglify = require('gulp-uglify')
-, sass = require('gulp-sass')
-, image = require('gulp-image')
-, rename = require('gulp-rename')
-, jsArray = [
-      'js/io/jquery-3.1.1.js'
-    , 'js/io/default.js'
-    , 'js/io/vue.min.js'
-    , 'js/out/*.js'
-    , 'js/themes/*.js'
-]
-, imgArray = [
-      'img/*'
-    , 'img/**/*'
-    , 'img/**/**/*'
-    , 'img/**/**/**/*'
-]
-;
+var gulp = require('gulp'),
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify'),
+  sass = require('gulp-sass'),
+  image = require('gulp-image'),
+  imagemin = require('gulp-imagemin'),
+  rename = require('gulp-rename'),
+  babel = require('gulp-babel'),
+  jsArray = [
+    'js/lib/default.js',
+    'js/lib/*.js',
+    'js/vendor/*.js',
+    'js/theme/*.js'
+  ],
+  imgArray = [
+    'img/*',
+    'img/**/*',
+    'img/**/**/*'
+  ]
+
 gulp.task('css', ['cssdev'], function () {
-    return gulp.src(['scss/*.scss', 'scss/**/*.scss'])
+  return gulp.src(['scss/*.scss', 'scss/**/*.scss'])
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(rename({suffix: ".min"}))
-        .pipe(gulp.dest('../assets/css'));
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('../dist/css'))
 })
-gulp.task('cssdev', function () {
-    return gulp.src(['scss/*.scss', 'scss/**/*.scss'])
+.task('cssdev', function () {
+  return gulp.src(['scss/*.scss', 'scss/**/*.scss'])
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(gulp.dest('../assets/css'));
+        .pipe(gulp.dest('../dist/css'))
 })
-.task('jsdev', function(){
-    return gulp.src(jsArray)
-        .pipe(concat('all.js'))
-        .pipe(gulp.dest('../assets/js'))
-})
-.task('js', ['jsdev'], function(){
-    return gulp.src(jsArray)
-        .pipe(concat('all.min.js'))
-        .pipe(uglify({
-            preserveComments: false
+.task('js', function () {
+  return gulp.src(jsArray)
+        .pipe(babel({
+          presets: ['env']
         }))
-        .pipe(gulp.dest('../assets/js'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify({
+          preserveComments: false
+        }))
+        .pipe(gulp.dest('../dist/js'))
 })
-.task('img', function () {
-    gulp.src(imgArray)
+.task('img', ['imgdev'], function () {
+  gulp.src(imgArray)
     .pipe(image({
-        pngquant: true,
-        optipng: true,
-        zopflipng: false,
-        jpegRecompress: true,
-        jpegoptim: true,
-        mozjpeg: true,
-        gifsicle: true,
-        svgo: true,
-        concurrent: 7
+      pngquant: true,
+      optipng: true,
+      zopflipng: false,
+      jpegRecompress: true,
+      jpegoptim: true,
+      mozjpeg: true,
+      gifsicle: true,
+      svgo: true,
+      concurrent: 7
     }))
-    .pipe(gulp.dest('../assets/img'));
+    .pipe(gulp.dest('../dist/img'))
 })
 .task('imgdev', function () {
-    gulp.src(imgArray)
-    .pipe(image({
-        pngquant: true,
-        optipng: false,
-        zopflipng: false,
-        jpegRecompress: true,
-        jpegoptim: false,
-        mozjpeg: false,
-        gifsicle: false,
-        svgo: false,
-        concurrent: 0
-    }))
-    .pipe(gulp.dest('../assets/img'));
+  gulp.src(imgArray)
+    .pipe(imagemin())
+    .pipe(gulp.dest('../dist/img'))
 })
 .task('watch', function () {
-    gulp.watch('scss/**/*.scss', ['css']);
-    gulp.watch(jsArray, ['jsdev']);
-    gulp.watch(imgArray, ['imgdev']);
+  gulp.watch('scss/**/*.scss', ['css'])
+  gulp.watch(jsArray, ['js'])
+  gulp.watch(imgArray, ['imgdev'])
 })
-.task('default', ['watch']);
+.task('default', ['watch'])

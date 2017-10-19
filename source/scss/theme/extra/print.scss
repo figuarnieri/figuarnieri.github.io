@@ -1,5 +1,5 @@
 @media only print {
-	#up, #down{display: none;}
+	.header, .footer{display: none;}
 	main{
 		a{
 			text-decoration: underline;

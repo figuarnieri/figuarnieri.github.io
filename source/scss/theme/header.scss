@@ -1,32 +1,56 @@
-#up{
-	position: fixed;top: 0;right: 0;z-index: 3;
-	.nav{
-		&:not(.nav-active){
-			.nav-text{text-shadow: 0 0 40px #fff, 0 0 40px #fff, 0 0 30px #fff, 0 0 20px #fff;}
+.header{
+	&--nav{position: fixed;top: 0;right: 0;z-index: 3;color: #fff;font-size: 1.2em;height: 0;}
+	&--check{
+		display: none;
+		&:checked{
+			~.header{
+				&--nav{
+					height: 100%;
+					.header{
+						&--list{transform: translateX(0vh);}
+						&--menu{
+							color: darken(#e66, 10%);
+							&:before{content: '';position: fixed;left: 0;top: 0;width: 100vw;height: 100vh;z-index: 0;background-color: rgba(#000, .1);}
+							&-text, .fa-bars{
+								color: rgba(#fff, .5);
+								&:hover{color: rgba(#fff, .8);}
+							}
+						}
+						&--item{
+							&-1{transform: translateX(-13px) skewX(-11deg);transition-delay: 0.1s;}
+							&-2{transform: translateX(-22px) skewX(-11deg);transition-delay: 0.2s;}
+							&-3{transform: translateX(-31px) skewX(-11deg);transition-delay: 0.3s;}
+							&-4{transform: translateX(-40px) skewX(-11deg);transition-delay: 0.4s;}
+							&-5{transform: translateX(-48px) skewX(-11deg);transition-delay: 0.5s;}
+						}
+					}
+					.fa-bars{
+						&:before{content: '\f00d';}
+					}
+				}
+			}
 		}
 	}
-	.nav-icon{
-		font-family: Arial, sans-serif;font-size: 1rem;font-weight: bold;color: #666;transform: skewx(-10deg);padding: 20px 32px 20px 101px;margin-right: -10px;transition: background-color 1s;
-		&:hover{color: #333;}
-	}
-	.nav-text{transform: skewx(10deg);display: block;}
-	.fa-bars{font-size: 1.6rem;position: relative;top: -1px;margin-left: 10px;width: 24px;line-height: 20px;}
-	.nav-list{height: 100vh;width: 320px;background-color: rgba(238, 102, 102, .9);position: absolute;top: 0;right: -400px;z-index: -1;transform: skewX(-10deg);padding-top: 68px;transition: right .6s;}
-	.nav-link{
-		font-size: 20px;color: #fff;border-left: 3px solid transparent;
-		&:hover{background-color: #fff;color: #666;border-left-color: #333;}
-		.fa{font-size: 38px;}
-	}
-	@for $i from 1 through 5 {
-		.nav-index-#{$i}{
-			.nav-link{padding: 20px (119px - (14px * $i) + 14px) 20px 0;}
+	&--menu{
+		position: absolute;right: 20px;top: 10px;color: #666;
+		&-text, .fa-bars{
+			position: relative;z-index: 1;transition: color .4s;
+			
+		}
+		&-text{
+			&:before{content: '';position: absolute;left: -100px;right: -100px;top: -10px;height: 45px;}
 		}
 	}
-	.nav-active{
-		.nav-icon{background-color: rgba(255,255,255,.4);color: #fff;}
-		.nav-list{display: block;right: -60px;}
-		.fa-bars{
-			&:before{content: '\f00d';}
-		}
+	&--list{
+		padding: 46px 0px 10px;min-height: 100vh;position: relative;transform: translateX(70vh);transition: transform .4s;
+		&:before{content: '';position: absolute;right: 0;bottom: 0;background-color: rgba(238,102,102,0.7);width: 341px;height: 100vh;transform: skewX(-10.5deg);transform-origin: 0% calc(341px * 2 - 48px);}
 	}
+	&--link{
+		padding: 10px 5px;position: relative;border-left: 3px solid transparent;
+		&:hover{background-color: rgba(#fff, .7);color: #666;border-left-color: #e66;}
+		&:after{content: '';position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
+		&-text{transform: skewX(11deg);padding-left: 20px;}
+		&-active{background-color: rgba(#fff, .9);color: #444;border-left-color: #e33;cursor: default;}
+	}
+	&--item{overflow: hidden;width: 200%;position: relative;transform: translateX(200px) skewX(-11deg);transition: transform .4s;}
 }
