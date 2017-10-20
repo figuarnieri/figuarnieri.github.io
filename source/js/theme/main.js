@@ -23,7 +23,7 @@ document.addEventListener('click', event => {
             , after = tag.dataset.goAfter
             ;
             bodyClass.add('loading--init');
-            xhr.open('POST', tag.pathname, true);
+            xhr.open('GET', tag.pathname, true);
             xhr.addEventListener('loadend', (res) => {
                 if(res.target.status===200){
                     const time = parseFloat(getComputedStyle(document.body).transitionDuration)
