@@ -22,7 +22,7 @@ document.addEventListener('click', event => {
             , bodyClass = document.querySelector('.loading').classList
             , after = tag.dataset.goAfter
             ;
-            bodyClass.add('loading--init');
+            // bodyClass.add('loading--init');
             xhr.open('GET', tag.pathname, true);
             xhr.addEventListener('loadend', (res) => {
                 if(res.target.status===200){
@@ -35,7 +35,7 @@ document.addEventListener('click', event => {
                     boardCurrent.innerHTML = boardLoad.innerHTML;
                     history.pushState('','', tag.href);
                     setTimeout(() => {
-                        bodyClass.remove('loading--init');
+                        //bodyClass.remove('loading--init');
                         if(after){
                             const fn = new Function(after);
                             fn();
@@ -48,7 +48,7 @@ document.addEventListener('click', event => {
     }
 
     if(tag.pathname===window.location.pathname){
-        e.preventDefault();
+        event.preventDefault();
         document.querySelector('.header--check:checked').click();
     }
 

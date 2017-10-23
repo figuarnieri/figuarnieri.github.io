@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fontastico Fonts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
+    <link rel="stylesheet" href="/dist/css/lib/reset.css">
+    <link rel="stylesheet" href="/dist/css/lib/default.css">
+    <link rel="stylesheet" href="/dist/css/lib/grid.css">
+    <link rel="stylesheet" href="/dist/css/lib/ibaro.icons.min.css">
+    <link rel="stylesheet" href="/dist/css/lib/ibaro-screen.icons.min.css">
+</head>
+<body class="io-theme-white">
+    <div class="io-header-icon cf">
+        <div class="pc-col-5 m-col-20 cf">
+            <h1 class="pc-col-12 m-col-10 io-header-title"><span class="io-header-name">Fontastico</span>://icon.font</h1>
+            <!-- <div class="pc-col-8 m-col-10 io-color-box ta-c">
+                <h3 class="io-header-color ta-c">cores</h3>
+                <div class="io-color-item io-color-white d-ib" data-color="io-theme-white"></div>
+                <div class="io-color-item io-color-grey d-ib" data-color="io-theme-grey"></div>
+                <div class="io-color-item io-color-dark d-ib" data-color="io-theme-dark"></div>
+            </div> -->
+        </div>
+        <div class="pc-col-13 m-col-20 ta-r">
+            <div class="io-search d-b">
+                <input class="io-input" type="text" data-search placeholder="Nome do ícone">
+                <svg class="io-search-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 300 300">
+                    <path fill="#454040" stroke-width="9.756173" id="path12423" d="m35.938999,35.085999c-43.272999,43.272003 -43.379,114.158997 -0.105988,157.432007c36.662991,36.663025 93.201992,42.25 135.920986,16.765991l76.343994,74.234985c10.506989,10.197998 27.084991,9.821045 37.116974,-0.843994c10.03302,-10.664978 9.77002,-27.445984 -0.737976,-37.643982l-75.182983,-72.864014c26.360992,-42.846985 21.007996,-100.044983 -16.028015,-137.080994c-43.27298,-43.273008 -114.054993,-43.273008 -157.327,0l0,0l0.000008,0zm31.738979,31.739014c26.10202,-26.102024 67.746033,-26.102024 93.848022,0c26.10199,26.10199 26.10199,67.745972 0,93.847961c-26.10199,26.102051 -67.746002,26.102051 -93.848022,0c-26.10199,-26.10199 -26.10199,-67.745972 0,-93.847961z"/>
+                </svg>
+            </div>
+        </div>
+        <div class="pc-col-2 m-col-20 ta-r">
+            <span id="icon-count" class="io-header-count">0</span>
+        </div>
+    </div>
+    <template id="icon-box">
+        <div class="icon-wrap">
+            <h2 class="font-title ta-c"></h2>
+            <div class="fonts-grid cf"></div>
+        </div>
+    </template>
+    <template id="icon-item">
+        <div class="pc-col-1 m-col-33 ml-col-5 io-icon-item">
+            <div class="io-icon-box">
+                <span class="io-icon-code"></span>
+                <span class="io-icon-ico d-b ta-c"></span>
+                <span class="io-icon-name">
+                    <span class="io-icon-bgname"></span>
+                </span>
+            </div>
+        </div>
+    </template>
+    <div id="main-icons"></div>
+    <script src="/dist/js/ibaro.icons.min.js"></script>
+    <script>
+        new Icons();
+    </script>
+</body>
+</html>
