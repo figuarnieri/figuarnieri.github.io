@@ -191,3 +191,7 @@ body.boxcontent:after {
   margin-top: -80px;
   color: #fff;
 }
+
+.async-hide {
+  opacity: 0 !important;
+}

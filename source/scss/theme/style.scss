@@ -55,3 +55,4 @@ body{
 		&:before{content: 'Carregando';position: absolute;left: 50%;font-size: 30px;top: 50%;transform: translate(-50%, -50%);margin-top: -80px;color: #fff;}
 	}
 }
+.async-hide { opacity: 0 !important}

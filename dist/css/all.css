@@ -13462,6 +13462,10 @@ body.boxcontent:after {
   color: #fff;
 }
 
+.async-hide {
+  opacity: 0 !important;
+}
+
 @keyframes home-line-subtitle {
   from {
     left: 50%;
