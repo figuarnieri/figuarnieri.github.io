@@ -1,88 +1,135 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Maskfy</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=1" />
-    <link rel="stylesheet" href="../dist/css/lib/reset.css">
-    <link rel="stylesheet" href="../dist/css/lib/default.css">
-    <link rel="stylesheet" href="../dist/css/lib/grid.css">
-    <link rel="stylesheet" href="../dist/css/lib/ibaro-screen.maskfy.min.css">
+  <meta charset="UTF-8">
+  <title>Maskfy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="full">
-        <svg class="logo-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 281.1 176.7" role="heading" aria-level="1" aria-label="Maskfy">
-            <path class="key key0 st0"/>
-            <path class="key key1 st0"/>
-            <path class="key key2 st0"/>
-            <path class="key key3 st0"/>
-            <path class="key key4 st1"/>
-            <path class="key key5 st1"/>
-            <path class="key key6 st1"/>
-            <path class="key key7 st1"/>
-            <g class="logo-mask">
-                <path class="st2 logo-mask-left"/>
-                <path class="st4 logo-mask logo-mask-right"/>
-                <path class="st5 logo-mask logo-mask-m"/>
-            </g>
-        </svg>
-    </div>
-    <div class="page">
-        <h2 class="page--title">Exemple</h2>
-        <input class="page--input mask-by-class" type="text" value="">
-        <input class="page--input" data-mask="999.999.999-99" type="text" placeholder="CPF (Ex.: 999.999.999-99)">
-        <input class="page--input" data-mask="999.999.999.999,99" data-mask-reverse data-mask-size="3" type="text" value="1542">
-        <input class="page--input" data-mask="(11) 9999-99999" type="text" value="11952218817">
-        <input class="page--input" data-mask="+ 99 99 99999-9999" type="text" value="5511987114394">
-        <input class="page--input" data-mask="99/99/9999" type="text" value="12/12/2017">
-    </div>
-    <div class="page">
-        <h2 class="page--title">Setup</h2>
-        <h3 class="page--subtitle">HTML</h3>
-<pre class="page--code">
-<code>&lt;input class="page--input <em>mask-by-class</em>" type="text" value=""&gt;</code>
+  <div class="full">
+    <svg class="logo-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 281.1 176.7">
+      <path class="key key0 st0"/>
+      <path class="key key1 st0"/>
+      <path class="key key2 st0"/>
+      <path class="key key3 st0"/>
+      <path class="key key4 st1"/>
+      <path class="key key5 st1"/>
+      <path class="key key6 st1"/>
+      <path class="key key7 st1"/>
+      <g class="logo-mask">
+        <path class="st2 logo-mask-left"/>
+        <path class="st4 logo-mask logo-mask-right"/>
+        <path class="st5 logo-mask logo-mask-m"/>
+      </g>
+    </svg>
+    <div class="full--subtitle">Simple, No Dependences, Mobile Compatibility, <span class="full--subtitle-strong">Only 1kb (gzip)</span> = ♥</div>
+  </div>
+  <div class="page">
+    <h1 class="page--bigtitle">Maskfy - Input Mask Simple</h1>
+    <p>A Javascript library without a dependency of jQuery, Zepto, and etc ... Very simple to install and use. With only 1kb (gzip) code, it's also well accepted on mobile devices</p>
+    <div class="page--contain">
+      <h2 class="page--title">Install / Usage</h2>
+      <p>Add Maskfy file</p>
+      <code>&lt;<span class="page--tag">script</span> <span class="page--attr">src</span>=<span class="page--value">"path/js/maskfy.min.js"</span>&gt;&lt;/<span class="page--tag">script</span>&gt;</code>
+      <h3 class="page--subtitle">HTML <small class="page--subtitle-small">(by class or attribute)</small></h3>
+      <p>Insert a selector in class tag</p>
+      <code>&lt;<span class="page--tag">input</span> <span class="page--attr">class</span>=<span class="page--value">"page--input"</span> <span class="page--important">data-mask="999.999.999-99"</span> <span class="page--attr">type</span>=<span class="page--value">"text"</span> <span class="page--attr">placeholder</span>=<span class="page--value">"CPF (Ex.: 999.999.999-99)"</span>&gt;
 or
-<code>&lt;input class="page--input" data-mask="999.999.999-99" type="text" placeholder="CPF (Ex.: 999.999.999-99)"&gt;</code>
-</pre>
-        <h3 class="page--subtitle">JS Library</h3>
-<pre class="page--code">
-<code>&lt;script src="path/to/ibaro.maskfy.min.js"&gt;&lt;/script&gt;</code>
-</pre>
-        <h3 class="page--subtitle">JS init by Attribute HTML</h3>
-<pre class="page--code">
-<code>&lt;script&gt;
-    new Maskfy('[data-mask]');
-&lt;/script&gt;</code>
-</pre>
-        <h3 class="page--subtitle">JS init by Class HTML</h3>
-<pre class="page--code">
-<code>&lt;script&gt;
-    new Maskfy('.mask-by-class');
-&lt;/script&gt;</code>
-</pre>
-        <h3 class="page--subtitle">JS Options</h3>
-<pre class="page--code">
-<code>&lt;script&gt;
-    new Maskfy({
-        tag: '.mask-by-class', <em>// selector tag</em>
-        reverse: true, <em>// reverse typing</em>
-        mask: '999.999.999,99', <em>// mask pattern</em>
-        size: 3 <em>// minimum digits</em>
-    });
-&lt;/script&gt;
-</code>
-</pre>
+&lt;<span class="page--tag">input</span> <span class="page--attr">class</span>=<span class="page--value">"page--input <span class="page--important">mask-by-class</span>"</span> <span class="page--attr">type</span>=<span class="page--value">"text"</span> <span class="page--attr">placeholder</span>=<span class="page--value">"CPF (Ex.: 999.999.999-99)"</span>&gt;</code>
+      <h3 class="page--subtitle">Javascript Simple <small class="page--subtitle-small">(by attribute)</small></h3>
+      <code>&lt;<span class="page--tag">script</span>&gt;
+  <span class="page--tag">new</span> <span class="page--value">Maskfy('</span><span class="page--important">[data-mask]</span><span class="page--value">')</span>;
+&lt;/<span class="page--tag">script</span>&gt;
+or
+&lt;<span class="page--tag">script</span>&gt;
+  <span class="page--tag">new</span> <span class="page--value">Maskfy('</span><span class="page--important">.mask-by-class</span><span class="page--value">')</span>;
+&lt;/<span class="page--tag">script</span>&gt;</code>
+      <h3 class="page--subtitle">Javascript Options</h3>
+<code>&lt;<span class="page--tag">script</span>&gt;
+  <span class="page--tag">new</span> <span class="page--value">Maskfy({</span>
+    <span class="page--attr">tag</span>: <span class="page--value">'[data-mask]'</span>, // selector tag
+    <span class="page--attr">reverse</span>: <span class="page--value">true</span>, // reverse typing
+    <span class="page--attr">mask</span>: <span class="page--value">'999.999.999,99'</span>, // mask pattern
+    <span class="page--attr">size</span>: <span class="page--value">3</span> // minimum digits
+  <span class="page--value">})</span>;
+&lt;/<span class="page--tag">script</span>&gt;</code>
     </div>
+    <div class="page--contain">
+      <h2 class="page--title">Exemples</h2>
+      <div class="page--form">
+        <div class="page--label">
+          <label for="Money">Money</label>
+        </div>
+        <div class="page--field">
+          <input id="Money" class="page--input mask-by-class" data-mask="999.999.999.999,99"  data-mask-reverse data-mask-size="3" type="text" value="">
+        </div>
+        <div class="page--label">
+          <label for="CPF">CPF</label>
+        </div>
+        <div class="page--field">
+          <input id="CPF" class="page--input" data-mask="999.999.999-99" type="text" placeholder="CPF (Ex.: 999.999.999-99)">
+        </div>
+        <div class="page--label">
+          <label for="MoneySet">Money Set</label>
+        </div>
+        <div class="page--field">
+          <input id="MoneySet" class="page--input" data-mask="999.999.999.999,99" data-mask-reverse data-mask-size="4" type="text" value="2.015,42">
+        </div>
+        <div class="page--label">
+          <label for="Phone">Phone BR</label>
+        </div>
+        <div class="page--field">
+          <input id="Phone" class="page--input" data-mask="(99) 99999-9999" type="text">
+        </div>
+        <div class="page--label">
+          <label for="Phone I11l">Phone US</label>
+        </div>
+        <div class="page--field">
+          <input id="Phone I11l" class="page--input" data-mask="+1 999-999-9999" type="text" value="">
+        </div>
+        <div class="page--label">
+          <label for="Date">Date</label>
+        </div>
+        <div class="page--field">
+          <input id="Date" class="page--input" data-mask="99/99/9999" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="page--contain">
+      <h2 class="page--title">Data attributes  <small class="page--subtitle-small">[data-*]</small></h2>
+      <p>If necessary, you could add attributes in the tag, to configure your mask options</p>
+      <h3 class="page--subtitle">data-mask</h3>
+      <code>&lt;<span class="page--tag">input</span> <span class="page--important">data-mask="999.999.999,99"</span>&gt;</code>
+      <h3 class="page--subtitle">data-mask-reverse</h3>
+      <code>&lt;<span class="page--tag">input</span> <span class="page--attr">data-mask</span>=<span class="page--value">"999.999.999,99"</span> <span class="page--important">data-mask-reverse</span>&gt;</code>
+      <h3 class="page--subtitle">data-mask-size</h3>
+      <code>&lt;<span class="page--tag">input</span> <span class="page--attr">data-mask</span>=<span class="page--value">"999.999.999,99"</span> <span class="page--attr">data-mask-reverse</span>=<span class="page--value">""</span> <span class="page--important">data-mask-size</span>&gt;</code>
+    </div>
+    <div class="page--contain">
+      <h2 class="page--title">Source</h2>
+      <p>
+        <a href="https://github.com/figuarnieri/maskfy" target="_blank">Github</a> | <a href="https://twitter.com/figuarnieri" target="_blank">@figuarnieri</a>
+      </p>
+    </div>
+    <div class="page--contain">
+      <h2 class="page--title">License</h2>
+      <p>
+        The MIT License<br>
+        Copyright 2017 <sup>&copy;</sup> <a href="https://figuarnieri.github.io/" target="_blank">Filipe Guarnieri</a>
+      </p>
+    </div>
+  </div>
 
-    <script src="../dist/js/ibaro.maskfy.min.js"></script>
-    <script>
-        new Maskfy('[data-mask]');
-        new Maskfy({
-            tag: '.mask-by-class',
-            reverse: true,
-            mask: '999.999.999,99',
-            size: 3
-        });
-    </script>
+  <script src="maskfy.js"></script>
+  <script>
+    fetch('maskfy.js').then(e => e.text()).then((e)=> {
+      var code = e.replace(/\s\s+/g,'').replace(/\s=\s/g,'=').replace(/\)\s/g,')').replace(/\, /g,',').replace(/\s\|\|\s/g,'||').replace(/\s\{/g,'{').replace(/\s\?\s/g,'?').replace(/\s\:\s/g,':')
+      console.log(code);
+    })
+  </script>
+  <script>
+    new Maskfy('[data-mask]');
+  </script>
 </body>
 </html>
