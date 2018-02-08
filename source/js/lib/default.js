@@ -20,19 +20,4 @@ document.querySelectorAll('[data-css]').forEach(item => {
 		console.info(msg);
 	}
 });
-window.addEventListener('keyup', (e) => {
-	if(e.keyCode===13 && e.ctrlKey===true){
-		const url = location.host.replace(/^(www|local|log|dev)\.|\.(com|co|es|edu|gov|info|org|net|uol\.com)(|\.(br|))$/gi,'');
-		window.open('http://adm.ibaro.com.br/'+url,'_blank');
-	}
-});
-window.addEventListener('resize', () => {
-	deviceType(window.innerWidth);
-});
-window.addEventListener('load', () => {
-	document.querySelectorAll('img').forEach(item => {
-		item.addEventListener('error', (img) => {
-			img.target.classList.add('__error-img');
-		})
-	});
-});
+window.addEventListener('resize', () => deviceType(window.innerWidth));

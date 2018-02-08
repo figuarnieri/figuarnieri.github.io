@@ -1,1 +1,0 @@
-"use strict";document.addEventListener("click",function(e){e.target.pathname===window.location.pathname&&(e.preventDefault(),document.querySelector(".header--check:checked").click())}),document.querySelectorAll(".header a").forEach(function(e){e.pathname===location.pathname&&e.classList.add("header--link-active")});
