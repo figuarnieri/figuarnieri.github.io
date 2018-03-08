@@ -53,5 +53,3 @@ document.addEventListener('click', event => {
 });
 window.squareHome = () => document.body.classList.remove('boxcontent');
 window.squarePages = () => document.body.classList.add('boxcontent');
-new Tipfy('[title], [data-tipfy]');
-new Maskfy('[data-mask]');

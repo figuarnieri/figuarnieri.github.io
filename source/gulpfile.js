@@ -38,6 +38,7 @@ gulp.task('css', ['cssdev'], function () {
         .pipe(uglify({
           preserveComments: false
         }))
+        .pipe(concat('all.min.js'))
         .pipe(gulp.dest('../dist/js'))
 })
 .task('img', ['imgdev'], function () {
